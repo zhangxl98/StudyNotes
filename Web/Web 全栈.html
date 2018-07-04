@@ -1,0 +1,2223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Web全栈</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<link rel="shortcut icon" href="http://img.hb.aicdn.com/6b858ec941683756697e9f45d68163e71d28524467df-e61VLG_fw658" />
+
+<link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/vs.css">
+<script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
+<script>
+hljs.tabReplace = ' ';
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+ //是否显示导航栏
+ var showNavBar = true;
+ //是否展开导航栏
+ var expandNavBar = true;
+
+ $(document).ready(function(){
+    var h1s = $("body").find("h1");
+    var h2s = $("body").find("h2");
+    var h3s = $("body").find("h3");
+    var h4s = $("body").find("h4");
+    var h5s = $("body").find("h5");
+    var h6s = $("body").find("h6");
+
+    var headCounts = [h1s.length, h2s.length, h3s.length, h4s.length, h5s.length, h6s.length];
+    var vH1Tag = null;
+    var vH2Tag = null;
+    for(var i = 0; i < headCounts.length; i++){
+        if(headCounts[i] > 0){
+            if(vH1Tag == null){
+                vH1Tag = 'h' + (i + 1);
+            }else{
+                vH2Tag = 'h' + (i + 1);
+            }
+        }
+    }
+    if(vH1Tag == null){
+        return;
+    }
+
+    $("body").prepend('<div class="BlogAnchor">' + 
+        '<span style="color:red;position:absolute;top:-6px;left:0px;cursor:pointer;" onclick="$(\'.BlogAnchor\').hide();">×</span>' +
+        '<p>' + 
+            '<b id="AnchorContentToggle" title="收起" style="cursor:pointer;">目录▲</b>' + 
+        '</p>' + 
+        '<div class="AnchorContent" id="AnchorContent"> </div>' + 
+    '</div>' );
+
+    var vH1Index = 0;
+    var vH2Index = 0;
+    $("body").find("h1,h2,h3,h4,h5,h6").each(function(i,item){
+        var id = '';
+        var name = '';
+        var tag = $(item).get(0).tagName.toLowerCase();
+        var className = '';
+        if(tag == vH1Tag){
+            id = name = ++vH1Index;
+            name = id;
+            vH2Index = 0;
+            className = 'item_h1';
+        }else if(tag == vH2Tag){
+            id = vH1Index + '_' + ++vH2Index;
+            name = vH1Index + '.' + vH2Index;
+            className = 'item_h2';
+        }
+        $(item).attr("id","wow"+id);
+        $(item).addClass("wow_head");
+        $("#AnchorContent").css('max-height', ($(window).height() - 180) + 'px');
+        $("#AnchorContent").append('<li><a class="nav_item '+className+' anchor-link" onclick="return false;" href="#" link="#wow'+id+'">'+name+" · "+$(this).text()+'</a></li>');
+    });
+
+    $("#AnchorContentToggle").click(function(){
+        var text = $(this).html();
+        if(text=="目录▲"){
+            $(this).html("目录▼");
+            $(this).attr({"title":"展开"});
+        }else{
+            $(this).html("目录▲");
+            $(this).attr({"title":"收起"});
+        }
+        $("#AnchorContent").toggle();
+    });
+    $(".anchor-link").click(function(){
+        $("html,body").animate({scrollTop: $($(this).attr("link")).offset().top}, 500);
+    });
+
+    var headerNavs = $(".BlogAnchor li .nav_item");
+    var headerTops = [];
+    $(".wow_head").each(function(i, n){
+        headerTops.push($(n).offset().top);
+    });
+    $(window).scroll(function(){
+        var scrollTop = $(window).scrollTop();
+        $.each(headerTops, function(i, n){
+            var distance = n - scrollTop;
+            if(distance >= 0){
+                $(".BlogAnchor li .nav_item.current").removeClass('current');
+                $(headerNavs[i]).addClass('current');
+                return false;
+            }
+        });
+    });
+
+    if(!showNavBar){
+        $('.BlogAnchor').hide();
+    }
+    if(!expandNavBar){
+        $(this).html("目录▼");
+        $(this).attr({"title":"展开"});
+        $("#AnchorContent").hide();
+    }
+ });
+</script>
+<style>
+    /*导航*/
+    .BlogAnchor {
+        background: #f1f1f1;
+        padding: 10px;
+        line-height: 180%;
+        position: fixed;
+        right: 48px;
+        top: 48px;
+        border: 1px solid #aaaaaa;
+    }
+    .BlogAnchor p {
+        font-size: 18px;
+        color: #15a230;
+        margin: 0 0 0.3rem 0;
+        text-align: right;
+    }
+    .BlogAnchor .AnchorContent {
+        padding: 5px 0px;
+        overflow: auto;
+    }
+    .BlogAnchor li{
+        text-indent: 0.5rem;
+        font-size: 14px;
+        list-style: none;
+    }
+    .BlogAnchor li .nav_item{
+        padding: 3px;
+    }
+    .BlogAnchor li .item_h1{
+        margin-left: 0rem;
+    }
+    .BlogAnchor li .item_h2{
+        margin-left: 2rem;
+        font-size: 0.8rem;
+    }
+    .BlogAnchor li .nav_item.current{
+        color: white;
+        background-color: #5cc26f;
+    }
+    #AnchorContentToggle {
+        font-size: 13px;
+        font-weight: normal;
+        color: #FFF;
+        display: inline-block;
+        line-height: 20px;
+        background: #5cc26f;
+        font-style: normal;
+        padding: 1px 8px;
+    }
+    .BlogAnchor a:hover {
+        color: #5cc26f;
+    }
+    .BlogAnchor a {
+        text-decoration: none;
+    }
+    ul{
+    	 list-style-type: none;
+    }
+    
+</style>
+
+<script>
+	(function() {
+		if(!window.console) {
+			window.console = {
+				log: function() {}
+			};
+			return;
+		}
+		var me = 19;
+		var Star = function() {
+			this.x = 0;
+			this.speed = 1;
+			this.y = 0;
+		}
+		var score = 0;
+		var strs = function() {
+			var result = '';
+			for(var i = 0; i < 20; i++) {
+				result += "\n"
+				for(var n = 0; n < 40; n++) {
+					var now = '一'
+					if(i == 19 && n == me) {
+						now = "码"
+					}
+					if(i == 19 && n == me + 1) {
+						now = "农"
+					}
+					stars.forEach(function(star) {
+						var x = Math.floor(star.x);
+						var y = Math.floor(star.y)
+						if(x == n && y == i) {
+							if(Math.abs(star.y - 19) < 1 && (n == me || n == me + 1)) {
+								die()
+							}
+							now = "车"
+						}
+					})
+					result += now;
+
+				}
+
+			}
+			result += "       《全民躲车车》得分：" + score
+			return result;
+		}
+		window.onkeydown = function(e) {
+			if(e.keyCode == 37) {
+				me -= 1;
+				if(me < 0) me = 0;
+			} else if(e.keyCode == 39) {
+				me += 1
+				if(me > 38) me = 38
+			}
+		}
+		var count = 0;
+		var die = function() {
+			clearInterval(timer1)
+			clearInterval(timer2)
+			clearInterval(timer3)
+			setTimeout(function() {
+				console.log("游戏结束，您的得分：" + score + "，｡:.ﾟヽ(｡◕‿◕｡)ﾉﾟ.:｡")
+			}, 100)
+
+		}
+		var stars = []
+		var appearP = 1
+		var timer1, timer2, timer3;
+		var begin = function() {
+			timer1 = setInterval(function() {
+				var createCount = Math.floor(Math.random() * 5 * appearP)
+				for(var i = 0; i < createCount; i++) {
+					var star = new Star();
+					star.x = Math.floor(Math.random() * 40)
+					star.y = 0;
+					star.speed = Math.random() * appearP; //Math.floor(Math.random()*3+1)
+					stars.push(star)
+				}
+
+			}, 1000)
+			timer2 = setInterval(function() {
+				stars.forEach(function(star, i) {
+					star.y += star.speed;
+					if(star.y >= 31) {
+						stars.splice(i, 1);
+						score++
+					}
+				})
+				console.log(strs())
+				count++;
+				if(count > 300) {
+					console.clear()
+					count = 0;
+				}
+			}, 100)
+			timer3 = setInterval(function() {
+				appearP *= 1.1
+			}, 3000)
+		}
+		console.log("这是本文档的彩蛋，祝您游戏愉快( ｡ớ ₃ờ)ھ")
+		console.log("输入 start(); 后即可开始《码农躲车车》游戏！")
+		window.start = function() {
+			appearP = 1.1
+			starts = [];
+			score = 0;
+			me = 19;
+			count = 0;
+			console.log("%c请先用鼠标点击一下弹个车网页页面，游戏需要捕捉网页上的键盘事件（你应该懂吧）！", "font-size:16px;color:#ff6700;")
+			console.log("使用键盘左右键移动最下方的码农，躲开所有的汽车，汽车数量和速度会一直增加，看看谁坚持的最久吧！")
+
+			var countdown = 6;
+			setTimeout(function() {
+				if(countdown-- <= 1) {
+					begin();
+				} else {
+					console.log(countdown)
+					setTimeout(arguments.callee, 1000)
+				}
+			}, 1000)
+			return("倒计时！")
+		}
+	})();
+</script>
+
+<style type="text/css">
+	html {
+		//background-color: #FFFACD;
+	}
+	body {
+		background-color: #C7EDCC;
+	}
+</style>
+
+</head>
+<body>
+<p><b style="font-size: 42px;font-family: 'Consolas';">Web 全栈学习笔记</b></p>
+<hr />
+<h1>写在前头</h1>
+<p style="font-size: 18px;">初始创建时间：2018/6/23 18:43 </p> 
+<p style="font-size: 18px;">更新日志：</p> 
+<table style="border: 1;">
+	<caption><b style="font-size: 22px;font-family: '微软雅黑';">更新日志</b></caption>
+	<tr>
+		<th>时间</th>
+		<th>编写者</th>
+		<th>更新说明</th>
+
+		<th>备注</th>
+	</tr>
+
+
+	<tr>
+		<td>2018/6/23 19:40:01 </td>
+		<td>张晓亮</td>
+		<td>完成了目录大纲，并正式开始编写此文档</td>
+		<td>无</td>
+	</tr>
+	<tr>
+		<td>2018/6/24 0:32:54 </td>
+		<td>张晓亮</td>
+		<td>对【JavaScript 高级】目录下【ECMAScript 6】进行了编辑</td>
+		<td>无</td>
+	</tr>
+	<tr>
+		<td>2018/6/24 14:36:12 </td>
+		<td>张晓亮</td>
+		<td>基本完成了
+【JavaScript 高级】目录下【ECMAScript 6】的编辑</td>
+		<td>无</td>
+	</tr>
+	<tr>
+		<td>2018/6/29 16:08:07 </td>
+		<td>张晓亮</td>
+		<td>添加了【微信系列】及其子目录</td>
+		<td>无</td>
+	</tr>
+	<tr>
+		<td>2018/6/29 23:02:39 </td>
+		<td>张晓亮</td>
+		<td>对【全栈】目录下【Node.js】进行了编辑</td>
+		<td>无</td>
+	</tr>
+	<tr>
+		<td>2018/7/5 2:01:08 </td>
+		<td>张晓亮</td>
+		<td>对【工程化&构建】目录下内容进行了编辑</td>
+		<td>上传到了 GitHub</td>
+	</tr>
+</table>
+<hr />
+<h1>JavaScript 高级</h1>
+<h2>面向对象、继承、闭包</h2>
+<h2>ECMAScript 6</h2>
+<h3>介绍</h3>
+<ul>
+<li>
+ECMAScript和JavaScript 
+<ul>
+<li>ECMA是标准，JS是实现</li>
+<li>类似于HTML5是标准，IE10、Chrome、FF都是实现 </li>
+</ul>
+</li>
+<li>ECMAScript简称<strong>ECMA或ES</strong></li>
+<li>
+目前版本 
+<ul>
+<li>低级浏览器主要支持ES 3.1 </li>
+<li>高级浏览器正在从ES 5过渡到ES 6 </li>
+</ul>
+</li>
+</ul>
+<h3>历史版本</h3>
+<table style="border: 1;">
+	<caption>ECMAScript 历史版本</caption>
+	<tr>
+		<th>时间</th>
+		<th>ECMA</th>
+		<th>说明</th>
+	</tr>
+	<tr>
+		<td>1996.11</td>
+		<td>ES 1.0</td>
+		<td>JS稳定<br/>Netscape将JS提交给ECMA组织，ES正式出现</td>
+	</tr>
+	<tr>
+		<td>1998.06</td>
+		<td>ES 2.0</td>
+		<td>ES2正式发布</td>
+	</tr>
+	<tr>
+		<td>1999.12</td>
+		<td>ES 3.0</td>
+		<td>ES3被广泛支持</td>
+	</tr>
+	<tr>
+		<td>2007.10</td>
+		<td>ES 4.0</td>
+		<td>ES4过于激进，被废除了</td>
+	</tr>
+	<tr>
+		<td>2008.07</td>
+		<td>ES 3.1</td>
+		<td>4.0退化为严重缩水版的3.1<br/>代号为Harmony(和谐)</td>
+	</tr>
+	<tr>
+		<td>2009.12</td>
+		<td>ES 5.0</td>
+		<td>ES 5.0正式发布<br/>同时公布了JavaScript.next也就是后来的ES 6.0</td>
+	</tr>
+	<tr>
+		<td>2011.06</td>
+		<td>ES 5.1</td>
+		<td>ES 5.1成为了ISO国际标准</td>
+	</tr>
+	<tr>
+		<td>2013.03</td>
+		<td>ES 6.0</td>
+		<td>ES 6.0草案定稿</td>
+	</tr>
+	<tr>
+		<td>2013.12</td>
+		<td>ES 6.0</td>
+		<td>ES 6.0草案发布</td>
+	</tr>
+	<tr>
+		<td>2015.06</td>
+		<td>ES 6.0</td>
+		<td>ES 6.0预计发布正式版<br/>JavaScript.next开始指向ES 7.0</td>
+	</tr>	
+</table>
+<h3>兼容性</h3>
+<ul>
+<li>ES6(ES2015)——IE10+、Chrome、FireFox、移动端、NodeJS  </li>
+<li>
+兼容浏览器方法
+<ul>
+<li>1.在线转换 babel(<a href=".\www\browser.js" title="browser.js">browser.js</a>)  
+</li>
+<li>2.提前编译  
+</li>
+</ul>
+</li>
+</ul>
+<p><code>babel</code> 使用方法：</p>
+<pre><code>  1 &lt;script src=&quot;browser.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+  2 &lt;script type=&quot;text/babel&quot;&gt;
+  3     let a=1;
+  4     let b=2;
+  5     alert(a+b);
+  6 &lt;/script&gt;
+</code></pre>
+
+<h3>ES 6.0的新特性</h3>
+<ol>
+<li>变量</li>
+<li>函数</li>
+<li>数组</li>
+<li>字符串</li>
+<li>面向对象</li>
+<li>Promise</li>
+<li>generator</li>
+<li>模块化</li>
+</ol>
+<h3>变量</h3>
+<ul>
+<li><code>let</code>		</li>
+<li>不能重复声明，变量-可以修改，有块级作用域</li>
+<li><code>const</code>	</li>
+<li>不能重复声明，常量-不能修改，有块级作用域</li>
+</ul>
+<h3>函数--箭头函数</h3>
+<p>原来的函数写法：  </p>
+<pre><code>  1 function [函数名](){
+  2     //...
+  3 }
+</code></pre>
+
+<p>箭头函数写法：</p>
+<pre><code>  1 ()=&gt;{
+  2     //...
+  3 }
+</code></pre>
+
+<ol>
+<li>如果只有一个参数，<code>()</code>可以省</li>
+<li>
+<p>如果只有一个<code>return</code>，<code>{}</code>可以省<br />
+示例：  
+</p>
+<pre><code>  1 &lt;script&gt;
+  2     let show=a=&gt;a*2;
+  3     alert(show(5));
+  4 &lt;/script&gt;
+</code></pre>
+
+</li>
+</ol>
+<h3>函数--函数的参数</h3>
+<ol>
+<li>
+<p>参数扩展/数组展开<br />
+ 1.收集参数  
+</p>
+<pre><code>  1 function show(a, b, ...args){}  
+  2 //Rest Parameter必须是最后一个
+</code></pre>
+
+<p>2.展开数组</p>
+<pre><code>  1 &lt;script&gt;
+  2     let arr=[1,2,3];
+  3     show(...arr);
+  4     //展开后的效果，跟直接把数组的内容写在这儿一样
+  5 
+  6     //...arr
+  7     //1,2,3
+  8     //show(1,2,3);
+  9             
+ 10     function show(a, b, c){
+ 11         alert(a);
+ 12         alert(b);
+ 13         alert(c);
+ 14     }
+ 15 &lt;/script&gt;
+</code></pre>
+
+</li>
+<li>
+<p>默认参数</p>
+<pre><code>  1 $('#div1').animate({width: '200px'});
+  2 $('#div1').animate({width: '200px'}, 1000);
+</code></pre>
+
+</li>
+</ol>
+<h3>解构赋值</h3>
+<ol>
+<li>左右两边结构必须一样</li>
+<li>右边必须是个东西</li>
+<li>
+<p>声明和赋值不能分开(必须在一句话里完成)<br />
+示例：</p>
+<pre><code>  1 let [a,b,c] = [1,3,5];
+  2 let {a,b,c} = {a: 1, b: 3, c: 5};
+</code></pre>
+
+</li>
+</ol>
+<h3>数组</h3>
+<ol>
+<li>
+<p>map<br />
+映射，一个对一个<br />
+示例：</p>
+<pre><code>  1 &lt;script&gt;
+  2     let arr=[1,3,5];
+  3     let result=arr.map(item=&gt;item*2);
+  4     //将数组 arr 的每个值×2，映射为数组 result
+  5     alert(result);
+  6 &lt;/script&gt;
+</code></pre>
+
+</li>
+<li>
+<p>reduce<br />
+汇总，一堆出来一个<br />
+示例：  
+</p>
+<pre><code>  1 //加法
+  2 &lt;script&gt;
+  3     let arr = [12, 123, 258, 456];
+  4 
+  5     let result = arr.reduce(function(tmp, item, index) {
+  6         //alert(tmp+','+item+','+index);
+  7         return tmp + item;
+  8     });
+  9 
+ 10     alert(result);
+ 11 &lt;/script&gt;
+ 12 
+ 13 //平均数
+ 14 &lt;script&gt;
+ 15     let arr = [12, 123, 258, 456];
+ 16 
+ 17     let result = arr.reduce(function(tmp, item, index) {
+ 18         if(index != arr.length - 1) { //不是最后一次
+ 19             return tmp + item;
+ 20         } else { //最后一次
+ 21             return(tmp + item) / arr.length;
+ 22         }
+ 23     });
+ 24 
+ 25     alert(result);
+ 26 &lt;/script&gt;
+</code></pre>
+
+</li>
+<li>
+<p>filter<br />
+过滤器<br />
+示例：</p>
+<pre><code>  1 &lt;script&gt;
+  2     //输出能被3整除的
+  3     let arr = [12, 5, 8, 99, 27, 36, 75, 11];
+  4 
+  5 //  let result = arr.filter(item =&gt; {
+  6 //      if(item % 3 == 0) {
+  7 //          return true;
+  8 //      } else {
+  9 //          return false;
+ 10 //      }
+ 11 //  });
+ 12     //返回的是布尔值
+ 13     let result = arr.filter(item =&gt; {
+ 14         return item % 3 == 0;
+ 15     });
+ 16 
+ 17     alert(result);
+ 18 &lt;/script&gt;
+</code></pre>
+
+</li>
+<li>
+<p>forEach<br />
+循环(迭代)<br />
+示例：</p>
+<pre><code>  1 &lt;script&gt;
+  2     let arr = [12, 5, 8, 9];
+  3 
+  4     arr.forEach((item, index) =&gt; {
+  5         alert(index + ': ' + item);
+  6     });
+  7 &lt;/script&gt;
+</code></pre>
+
+</li>
+</ol>
+<h3>字符串</h3>
+<ol>
+<li>
+多了两个新方法
+<ol>
+<li><code>startsWith()</code></li>
+<li><code>endsWith()</code></li>
+</ol>
+</li>
+<li>
+<p>字符串模板--字符串连接<br />
+	1. 直接把东西塞到字符串里面--${东西}<br />
+	2. 可以折行<br />
+	示例：  
+</p>
+<pre><code>  1 &lt;script&gt;
+  2     let title = '标题';
+  3     let content = '内容';
+  4     let str = '&lt;div&gt;\
+  5       &lt;h1&gt;' + title + '&lt;/h1&gt;\
+  6       &lt;p&gt;' + content + '&lt;/p&gt;\
+  7     &lt;/div&gt;';
+  8 
+  9     let str2 = `&lt;div&gt;
+ 10       &lt;h1&gt;${title}&lt;/h1&gt;
+ 11       &lt;p&gt;${content}&lt;/p&gt;
+ 12     &lt;/div&gt;`;
+ 13 &lt;/script&gt;
+</code></pre>
+
+</li>
+</ol>
+<h3>ES 6的面向对象</h3>
+<ol>
+<li>
+<p>面向对象  
+</p>
+<ol>
+<li><code>class</code> 关键字、构造器和类分开了</li>
+<li>
+<p><code>calss</code> 里面直接加方法<br />
+示例：  
+</p>
+<ol>
+<li>
+<p>原来的写法： </p>
+<pre><code>  1 &lt;script&gt;
+  2     function User(name, pass) {
+  3         this.name = name;
+  4         this.pass = pass;
+  5     }
+  6 
+  7     User.prototype.showName = function() {
+  8         alert(this.name);
+  9     };
+ 10     User.prototype.showPass = function() {
+ 11         alert(this.pass);
+ 12     };
+ 13     
+ 14     var u1 = new User('张三', '123456');
+ 15 
+ 16     u1.showName();
+ 17     u1.showPass();
+ 18 &lt;/script&gt;
+</code></pre>
+
+</li>
+<li>
+<p>现在的写法：  
+</p>
+<pre><code>  1 &lt;script&gt;
+  2     class User {
+  3         constructor(name, pass) {
+  4             this.name = name;
+  5             this.pass = pass;
+  6         }
+  7 
+  8         showName() {
+  9             alert(this.name);
+ 10         }
+ 11         showPass() {
+ 12             alert(this.pass);
+ 13         }
+ 14     }
+ 15     
+ 16     var u1 = new User('张三', '123456');
+ 17 
+ 18     u1.showName();
+ 19     u1.showPass();
+ 20 &lt;/script&gt;
+</code></pre>
+
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>继承<br />
+<code>super()</code> 超类<br />
+示例：  
+</p>
+<ol>
+<li>
+<p>原来的写法：</p>
+<pre><code>  1 &lt;script&gt;
+  2     function VipUser(name, pass, level) {
+  3         User.call(this, name, pass);
+  4 
+  5         this.level = level;
+  6     }
+  7 
+  8     VipUser.prototype = new User();
+  9     VipUser.prototype.constructor = VipUser;
+ 10 
+ 11     VipUser.prototype.showLevel = function() {
+ 12         alert(this.level);
+ 13     };
+ 14 
+ 15     var v1 = new VipUser('李四', '123456', 3);
+ 16 
+ 17     v1.showName();
+ 18     v1.showPass();
+ 19     v1.showLevel();
+ 20 &lt;/script&gt;
+</code></pre>
+
+</li>
+<li>
+<p>现在的写法：  
+</p>
+<pre><code>  1 &lt;script&gt;
+  2     class VipUser extends User {
+  3         constructor(name, pass, level) {
+  4             super(name, pass);
+  5 
+  6             this.level = level;
+  7         }
+  8 
+  9         showLevel() {
+ 10             alert(this.level);
+ 11         }
+ 12     }
+ 13 
+ 14     var v1 = new VipUser('李四', '123456', 3);
+ 15 
+ 16     v1.showName();
+ 17     v1.showPass();
+ 18     v1.showLevel();
+ 19 &lt;/script&gt;
+</code></pre>
+
+</li>
+</ol>
+</li>
+</ol>
+<h3>面向对象应用--Reacter</h3>
+<ol>
+<li>组件化--<code>class</code></li>
+<li>
+<p>JSX<br />
+示例：<br />
+<a href=".\www\react.js" title="react.js">react.js</a>、<a href=".\www\react-dom.js" title="react-dom.js">react-dom.js</a>、<a href=".\www\browser.js" title="browser.js">browser.js</a>    
+</p>
+<pre><code>  1 &lt;script src=&quot;react.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+  2 &lt;script src=&quot;react-dom.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+  3 &lt;script src=&quot;browser.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+  4 &lt;script type=&quot;text/babel&quot;&gt;
+  5     class Item extends React.Component{
+  6       constructor(...args){
+  7         super(...args);
+  8       }
+  9     
+ 10       render(){
+ 11         return &lt;li&gt;{this.props.str}&lt;/li&gt;;
+ 12       }
+ 13     }
+ 14     
+ 15     class List extends React.Component{
+ 16       constructor(...args){
+ 17         super(...args);
+ 18       }
+ 19     
+ 20       render(){
+ 21         return &lt;ul&gt;
+ 22           {this.props.arr.map(a=&gt;&lt;Item str={a}&gt;&lt;/Item&gt;)}
+ 23         &lt;/ul&gt;;
+ 24       }
+ 25     }
+ 26     
+ 27     window.onload=function (){
+ 28       let oDiv=document.getElementById('div1');
+ 29     
+ 30       ReactDOM.render(
+ 31         &lt;List arr={['abc', 'erw', 'sdfasdf', 'dfasdfsdfds']}&gt;&lt;/List&gt;,
+ 32         oDiv
+ 33       );
+ 34     };
+ 35 &lt;/script&gt;
+</code></pre>
+
+</li>
+</ol>
+<h3>json</h3>
+<ol>
+<li>
+JSON 对象  
+
+<ol>
+<li><code>JSON.stringify()</code>  
+</li>
+<li><code>JSON.parse()</code></li>
+</ol>
+</li>
+<li>
+简写
+<ol>
+<li>名字跟值(<code>key</code>和<code>value</code>)一样的，留一个就行</li>
+<li>
+方法简写--<code>: function</code>一起删除<br />
+<code>show: function (){...}</code>==&gt;<code>show(){...}</code>
+</li>
+</ol>
+</li>
+<li>
+<p>json的标准写法：</p>
+<ol>
+<li>只能用双引号</li>
+<li>
+<p>所有的名字都必须用引号包起来  
+</p>
+<pre><code>  1 {a: 12, b: 5}       ×
+  2 {&quot;a&quot;: 12, &quot;b&quot;: 5}   √
+  3 
+  4 {a: 'abc', b: 5}    ×
+  5 {&quot;a&quot;: &quot;abc&quot;, &quot;b&quot;: 5}√
+</code></pre>
+
+</li>
+</ol>
+</li>
+</ol>
+<h3>Promise</h3>
+<ol>
+<li>
+异步和同步  
+
+<ol>
+<li>异步：代码更复杂，操作之间没啥关系，同时进行多个操作</li>
+<li>同步：代码简单，同时只能做一件事  
+</li>
+</ol>
+</li>
+<li>
+Promise的两个方法：  
+
+<ol>
+<li><code>Promise.all()</code>  
+</li>
+<li><code>Promise.race()</code>  
+</li>
+</ol>
+</li>
+<li>
+<p>有了<code>Promise</code>之后的异步：  
+</p>
+<pre><code>  1 Promise.all([
+  2     $.ajax(),
+  3     $.ajax()
+  4 ]).then(results=&gt;{
+  5   //对了
+  6 }, err=&gt;{
+  7   //错了
+  8 });
+</code></pre>
+
+</li>
+</ol>
+<h3>generator--介绍</h3>
+<ol>
+<li>
+<p>普通函数与generator</p>
+<ol>
+<li>
+<p>普通函数--一路到底<br />
+示例：  
+</p>
+<pre><code>  1 function 函数(){
+  2     //...
+  3 
+  4     ajax(xxx, function (){
+  5     //...
+  6     });
+  7 }
+</code></pre>
+
+</li>
+<li>
+<p>generator函数--中间能停<br />
+示例：  
+</p>
+<pre><code>  1 function *函数(){
+  2     //...
+  3 
+  4     yield ajax(xxx);
+  5 
+  6     //...
+  7 }
+</code></pre>
+
+</li>
+</ol>
+</li>
+<li>
+<p>yield  
+</p>
+<ol>
+<li>
+<p>可以传参<br />
+示例：  
+</p>
+<pre><code>  1 &lt;script&gt;
+  2     function* show(num1, num2) {
+  3         alert(`${num1}, ${num2}`);
+  4         alert('a');
+  5 
+  6         let a = yield;
+  7 
+  8         alert('b');
+  9         alert(a);
+ 10 
+ 11         return;
+ 12     }
+ 13 
+ 14     let gen = show(1, 2);
+ 15 
+ 16     gen.next(3); //第一个next没法给yield传参
+ 17     gen.next(4);
+ 18 &lt;/script&gt;
+</code></pre>
+
+</li>
+<li>
+<p>可以返回<br />
+示例：</p>
+<pre><code>  1 &lt;script&gt;
+  2     function* show() {
+  3         alert('a');
+  4 
+  5         yield 12;
+  6 
+  7         alert('b');
+  8 
+  9         return 34;
+ 10     }
+ 11 
+ 12     let gen = show();
+ 13 
+ 14     let res1 = gen.next();
+ 15     console.log(res1); //{value: 12, done: false}
+ 16 
+ 17     let res2 = gen.next();
+ 18     console.log(res2); //{value: 34, done: true}
+ 19 &lt;/script&gt;
+</code></pre>
+
+</li>
+</ol>
+</li>
+</ol>
+<h3>generator--实例-runner</h3>
+<ol>
+<li>
+<p>异步操作方法：  
+</p>
+<ol>
+<li>普通回调  
+</li>
+<li>Promise</li>
+<li>
+<p>generator<br />
+需要引入<a href=".\www\runner.js" title="runner.js">runner.js</a>和<a href=".\www\jquery.js" title="jquery.js">jquery.js</a>   
+</p>
+<pre><code>  1 //runner.js
+  2 &lt;/script&gt;
+  3     function runner(_gen) {
+  4         return new Promise((resolve, reject) =&gt; {
+  5             var gen = _gen();
+  6 
+  7             _next();
+  8 
+  9             function _next(_last_res) {
+ 10                 var res = gen.next(_last_res);
+ 11 
+ 12                 if(!res.done) {
+ 13                     var obj = res.value;
+ 14 
+ 15                     if(obj.then) {
+ 16                         obj.then((res) =&gt; {
+ 17                             _next(res);
+ 18                         }, (err) =&gt; {
+ 19                             reject(err);
+ 20                         });
+ 21                     } else if(typeof obj == 'function') {
+ 22                         if(obj.constructor.toString().startsWith('function GeneratorFunction()')) {
+ 23                             runner(obj).then(res =&gt; _next(res), reject);
+ 24                         } else {
+ 25                             _next(obj());
+ 26                         }
+ 27                     } else {
+ 28                         _next(obj);
+ 29                     }
+ 30                 } else {
+ 31                     resolve(res.value);
+ 32                 }
+ 33             }
+ 34         });
+ 35     }
+ 36 &lt;/script&gt;
+</code></pre>
+
+</li>
+</ol>
+</li>
+<li>
+<p>普通的异步操作：  
+</p>
+<ol>
+<li>
+<p>普通回调：  
+</p>
+<pre><code>  1 //回调
+  2 $.ajax({
+  3     url: xxx,
+  4     dataType: 'json'
+  5     success(data1){
+  6         $.ajax({
+  7             url: xxx,
+  8             dataType: 'json'
+  9             success(data2){
+ 10                 $.ajax({
+ 11                     url: xxx,
+ 12                     dataType: 'json'
+ 13                     success(data3){
+ 14                         //完成...
+ 15                     },
+ 16                     error(){
+ 17                         alert('失败');
+ 18                     }
+ 19                 });
+ 20             },
+ 21             error(){
+ 22                 alert('失败');
+ 23             }
+ 24         });
+ 25     },
+ 26     error(){
+ 27         alert('失败');
+ 28     }
+ 29 });
+</code></pre>
+
+</li>
+<li>
+<p>Promise：  
+</p>
+<pre><code>  1 //Promise
+  2 Promise.all([
+  3     $.ajax({url: xxx, dataType: 'json'}),
+  4     $.ajax({url: xxx, dataType: 'json'}),
+  5     $.ajax({url: xxx, dataType: 'json'})
+  6 ]).then(results=&gt;{
+  7     //完成...
+  8 }, err=&gt;{
+  9     alert('失败');
+ 10 });
+</code></pre>
+
+</li>
+<li>
+<p>generator：  
+</p>
+<pre><code>  1 //generator
+  2 runner(function *(){
+  3     let data1=yield $.ajax({url: xxx, dataType: 'json'});
+  4     let data2=yield $.ajax({url: xxx, dataType: 'json'});
+  5     let data3=yield $.ajax({url: xxx, dataType: 'json'});
+  6 
+  7     //完成...
+  8 });
+</code></pre>
+
+</li>
+</ol>
+</li>
+<li>
+<p>带逻辑的异步操作：  
+</p>
+<ol>
+<li>
+<p>普通回调：  
+</p>
+<pre><code>  1 //带逻辑-普通回调
+  2 $.ajax({url: 'getUserData', dataType: 'json', success(userData){
+  3     if(userData.type=='VIP'){
+  4         $.ajax({url: 'getVIPItems', dataType: 'json', success(items){
+  5             //完成...
+  6         }, error(err){
+  7             alert('失败');
+  8         }});
+  9     }else{
+ 10         $.ajax({url: 'getItems', dataType: 'json', success(items){
+ 11         //完成...
+ 12         }, error(err){
+ 13             alert('失败');
+ 14         }});
+ 15     }
+ 16 }, error(err){
+ 17     alert('失败');
+ 18 }});
+</code></pre>
+
+</li>
+<li>
+<p>Promise：  
+</p>
+<pre><code>  1 //带逻辑-Promise
+  2 Promise.all([
+  3     $.ajax({url: 'getUserData', dataType: 'json'})
+  4 ]).then(results=&gt;{
+  5     let userData=results[0];
+  6 
+  7     if(userData.type=='VIP'){
+  8         Promise.all([
+  9             $.ajax({url: 'getVIPItems', dataType: 'json'})
+ 10         ]).then(results=&gt;{
+ 11             let items=results[0];
+ 12 
+ 13             //完成...
+ 14         }, err=&gt;{
+ 15             alert('失败');
+ 16         });
+ 17     }else{
+ 18         Promise.all([
+ 19             $.ajax({url: 'getItems', dataType: 'json'})
+
+ 20         ]).then(results=&gt;{
+ 21             let items=results[0];
+ 22 
+ 23             //完成...
+ 24         }, err=&gt;{
+ 25             alert('失败');
+ 26         });
+ 27     }
+ 28 }, err=&gt;{
+ 29     alert('失败');
+ 30 });
+</code></pre>
+
+</li>
+<li>
+<p>generator：  
+</p>
+<pre><code>  1 //带逻辑-generator
+  2 runner(function *(){
+  3     let userData=yield $.ajax({url: 'getUserData', dataType: 'json'});
+  4 
+  5     if(userData.type=='VIP'){
+  6         let items=yield $.ajax({url: 'getVIPItems', dataType: 'json'});
+  7     }else{
+  8         let items=yield $.ajax({url: 'getItems', dataType: 'json'});
+  9     }
+ 10 
+ 11   //完成...
+ 12 });
+</code></pre>
+
+</li>
+</ol>
+</li>
+<li>
+总结
+<ol>
+<li>Promise--一次读一堆</li>
+<li>generator--逻辑性读取</li>
+</ol>
+</li>
+</ol>
+<h3>generator--实例-KAO</h3>
+<h3>ES7 &amp; ES8预览</h3>
+<h2>JavaScript 原理与库封装</h2>
+<h2>jQuery</h2>
+<h2>正则表达式与JSON</h2>
+<h2>事件与运动框架封装</h2>
+<hr />
+<h1>模块化</h1>
+<h2>CommonJS</h2>
+<h2>AMD--RequireJS</h2>
+<h2>CMD</h2>
+<h2>ES6 Modules</h2>
+<hr />
+<h1>HTML5&amp;CSS3</h1>
+<h2>HTML5</h2>
+<h2>CSS3</h2>
+<h2>Bootstrap</h2>
+<hr />
+<h1>图形学</h1>
+<h2>Canvas</h2>
+<h2>数据可视化--Highchart.js</h2>
+<hr />
+<h1>全栈</h1>
+<h2>前后端通信</h2>
+<h2>Node.js</h2>
+<h3>http 协议</h3>
+<ol>
+<li>resquest 请求</li>
+<li>
+<p>response 响应<br />
+示例：  
+</p>
+<pre><code>  1 const http=require('http');
+  2 
+  3 http.createServer((req, res) =&gt; {
+  4   res.write(&quot;Hello World!&quot;);
+  5   res.end();
+  6 }).listen(8080);
+</code></pre>
+
+</li>
+</ol>
+<h3>文件操作 File System</h3>
+<ol>
+<li>
+<p>fs--File System<br />
+示例：  
+</p>
+<pre><code>  1 const http=require('http');
+  2 const fs = require('fs');
+  3 
+  4 http.createServer((req, res) =&gt; {
+  5   let file_name='./www'+req.url;
+  6   fs.readFile(file_name, (err, data) =&gt; {
+  7     if (err) {
+  8       res.write('404')
+  9     } else {
+ 10       res.write(data)
+ 11     }
+ 12     res.end()
+ 13   })
+ 14 }).listen(8080);
+</code></pre>
+
+</li>
+</ol>
+<h3>数据请求--GET</h3>
+<ol>
+<li>
+<p>GET 数据解析</p>
+<ol>
+<li>
+<p><a href=".\www\node\GET\server.js" title="自己切">自己切</a><br />
+示例：  
+</p>
+</li>
+<li>
+<p>querystring<br />
+示例：  
+</p>
+<pre><code>  1 const http=require('http');
+  2 const querystring=require('querystring');
+  3 
+  4 http.createServer((req, res) =&gt; {
+  5 
+  6   const GET={};
+  7   let url;
+  8 
+  9   if (req.url.indexOf('?')!=-1) {
+ 10     let arr=req.url.split('?');
+ 11     //arr[0]=&gt;地址
+ 12     url=arr[0];
+ 13     //arr[1]=&gt;数据
+ 14     GET=querystring.parse(arr[1]);
+ 15 
+ 16   } else {
+ 17     url=req.url;
+ 18   }
+ 19   console.log(url, GET);
+ 20   res.write('aaa');
+ 21   res.end;
+ 22 }).listen(8080);
+</code></pre>
+
+</li>
+<li>
+<p>url<br />
+示例：  
+</p>
+<pre><code>  1 const http=require('http');
+  2 const urlLib=require('url');
+  3 
+  4 http.createServer((req, res) =&gt; {
+  5 
+  6   let url;
+  7 
+  8   let obj=urlLib.parse(req.url, true);
+  9 
+ 10   url=obj.pathname;
+ 11   const GET=obj.query;
+ 12 
+ 13   console.log(url, GET);
+ 14   res.write('aaa');
+ 15   res.end;
+ 16 }).listen(8080);
+</code></pre>
+
+</li>
+</ol>
+</li>
+</ol>
+<h3>数据请求--POST</h3>
+<ol>
+<li>
+<p>POST 数据分段到达</p>
+<ol>
+<li><code>data</code> 一段数据</li>
+<li>
+<p><code>end</code> 全部到达<br />
+	示例：  
+</p>
+<pre><code>  1 const http = require('http');
+  2 const fs = require('fs');
+  3 const querystring = require('querystring');
+  4 const urlLib = require('url');
+  5 
+  6 http.createServer((req, res) =&gt; {
+  7   let obj = urlLib.parse(req.url, true);
+  8 
+  9   let url = obj.pathname;
+ 10   const GET = obj.query;
+ 11 
+ 12   let str = '';
+ 13   req.on('data', (data) =&gt; {
+ 14     str += data;
+ 15   });
+ 16   req.on('end', () =&gt; {
+ 17     const POST =  querystring.parse(str);
+ 18   });
+ 19 
+ 20   let file_name = './www' + url;
+ 21   fs.readFile(file_name, (err, data) =&gt; {
+ 22     if (err) {
+ 23       res.write('404');
+ 24     } else {
+ 25       res.write(data);
+ 26     }
+ 27     res.end;
+ 28   })
+ 29 }).listen(8080);
+</code></pre>
+
+</li>
+</ol>
+</li>
+</ol>
+<h3>模块化</h3>
+<ol>
+<li>
+<p>系统模块</p>
+<table>
+	<caption><b style="font-family: '微软雅黑';">系统模块</b></caption>
+		<tr>
+			<th>模块</th>
+			<td>Crypto</td>
+			<td>Events</td>
+			<td>Net</td>
+			<td>OS</td>
+			<td>Path</td>
+			<td>Stream</td>
+			<td>Timers</td>
+			<td>ZLIB</td>
+		</tr>
+
+		<tr>
+			<th>说明</th>
+			<td>加密</td>
+			<td>事件</td>
+			<td>网络操作</td>
+			<td>操作系统信息</td>
+			<td>处理文件路径</td>
+			<td>流操作</td>
+			<td>定时器</td>
+			<td>压缩</td>
+		</tr>
+</table>
+</li>
+<li>
+<p>自定义模块</p>
+<ol>
+<li>
+模块的组成
+<ol>
+<li>
+require--引入其他模块
+<ol>
+<li>
+如果有&quot;<code>./</code>&quot;<br />
+从当前目录找
+</li>
+<li>
+如果没有&quot;<code>./</code>&quot;<br />
+先从系统模块找<br />
+再从 <code>node_modules</code> 找  
+
+</li>
+</ol>
+</li>
+<li>
+exports--输出<br />
+对外输出东西——必须加给exports
+</li>
+<li>module.exports--批量输出</li>
+</ol>
+</li>
+<li>
+<p>npm (NodeJS Package Manager)</p>
+<ol>
+<li>
+<p>下载模块  
+</p>
+<pre><code>  1 npm install xxx
+  2 npm uninstall xxx
+</code></pre>
+
+</li>
+<li>自动解决依赖</li>
+</ol>
+</li>
+<li>
+<p>发布自己的模块  
+</p>
+<pre><code>  1 npm init
+  2 npm publish
+  3 npm --force unpublish
+</code></pre>
+
+</li>
+<li>
+node_modules
+<ol>
+<li>模块放在这个文件夹里</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>包管理器</p>
+</li>
+</ol>
+<h2>Node 项目</h2>
+<hr />
+<h1>工程化&amp;构建</h1>
+<h2>Git、SVN</h2>
+<h2>Yeoman 脚手架</h2>
+<h3>Yeoman 官网</h3>
+<p><a href="http://yeoman.io/" title="Yeoman 官网">Yeoman 官网</a></p>
+<h3>Yeoman 安装</h3>
+<pre><code>  1 npm install -g yo
+</code></pre>
+
+<h3>Generator</h3>
+<ol>
+<li>
+<p>安装 grenerator-angular  
+</p>
+<pre><code>  1 npm install -g grenerator-angular  
+</code></pre>
+
+</li>
+<li>
+<p>生成项测试目录 </p>
+<pre><code>  1 mkdir yo-in-action
+  2 cd mkdir yo-in-action 
+</code></pre>
+
+</li>
+<li>
+<p>生成项目目录  
+</p>
+<pre><code>  1 mkdir angular-in-action
+  2 cd angular-in-action    
+</code></pre>
+
+</li>
+<li>
+<p>生成项目 </p>
+<pre><code>  1 yo angular learnangular
+</code></pre>
+
+</li>
+</ol>
+<h2>NPM/Bower 依赖管理工具</h2>
+<h3>Bower 官网</h3>
+<p><a href="https://bower.io/" title="Bower 官网">Bower 官网</a></p>
+<h3>Bower 安装</h3>
+<pre><code>  1 npm install -g bower
+</code></pre>
+
+<h3>Bower 实践</h3>
+<ol>
+<li>
+<p>生成项测试目录  
+</p>
+<pre><code>  1 mkdir bower-in-action
+  2 cd mkdir bower-in-action
+</code></pre>
+
+</li>
+<li>
+<p>生成项目目录  
+</p>
+<pre><code>  1 mkdir jquery-bootstrap-in-action 
+  2 cd jquery-bootstrap-in-action   
+</code></pre>
+
+</li>
+<li>
+<p>安装组件</p>
+<pre><code>  1 bower install jquery
+  2 bower install jbootstrap 
+</code></pre>
+
+</li>
+<li>
+<p>进入目录</p>
+<pre><code>  1 cd bower_components
+</code></pre>
+
+</li>
+</ol>
+<h2>Grunt</h2>
+<h3>Grunt 官网</h3>
+<p><a href="https://gruntjs.com/" title="Grunt 官网">Grunt 官网</a><br />
+<a href="http://www.gruntjs.net/" title="Grunt 中文网">Grunt 中文网</a></p>
+<h3>Grunt 安装</h3>
+<pre><code>  1 npm install -g grunt-cli
+</code></pre>
+
+<h3>Grunt 实践</h3>
+<ol>
+<li>
+<p>Grunt 的 Task,Target 和 Options</p>
+<ol>
+<li>
+<p>生成项测试目录</p>
+<pre><code>  1 mkdir grunt-in-action 
+  2 cd mkdir grunt-in-actio
+</code></pre>
+
+</li>
+<li>
+<p>生成项目目录</p>
+<pre><code>  1 mkdir grunt-by-yo 
+  2 cd grunt-by-yo  
+</code></pre>
+
+</li>
+<li>
+<p>搭建测试项目</p>
+<pre><code>  1 yo webapp grunt-by-yo
+</code></pre>
+
+</li>
+</ol>
+</li>
+</ol>
+<h2>打包构建</h2>
+<hr />
+<h1>主流框架</h1>
+<h2>架构模式：MVC、MVP、MVVM</h2>
+<h2>Vue</h2>
+<h2>React</h2>
+<h2>AngularJS</h2>
+<hr />
+<h1>移动 APP (Web/Native/Hybrid)</h1>
+<h2>React Native</h2>
+<h2>Ionic</h2>
+<hr />
+<h1>微信系列</h1>
+<h2>微信公众号</h2>
+<h2>微信小程序</h2>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
