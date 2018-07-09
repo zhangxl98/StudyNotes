@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Web全栈</title>
+<title>Web 全栈</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 /* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
@@ -297,8 +297,6 @@ img {
 hljs.tabReplace = ' ';
 hljs.initHighlightingOnLoad();
 </script>
-
-
 
 <style type="text/css">
 /* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
@@ -751,7 +749,10 @@ img {
     }
     
 </style>
-
+<script language="Javascript">
+	document.oncontextmenu = new Function("event.returnValue=false");
+	document.onselectstart = new Function("event.returnValue=false");
+</script>
 <script>
 	(function() {
 		if(!window.console) {
@@ -889,7 +890,8 @@ img {
 <p><b style="font-size: 42px;font-family: 'Consolas';">Web 全栈学习笔记</b></p>
 <hr />
 <h1>写在前头</h1>
-<p style="font-size: 18px;">初始创建时间：2018/6/23 18:43 </p> 
+<p style="font-size: 18px;">创建时间：2018/6/23 18:43 </p> 
+<p style="font-size: 18px;"><a href="https://github.com/zhangxl98/StudyNotes/tree/master/Web">GitHub</a></p> 
 <p style="font-size: 18px;">更新日志：</p> 
 <table style="border: 1;">
 	<caption><b style="font-size: 22px;font-family: '微软雅黑';">更新日志</b></caption>
@@ -937,7 +939,25 @@ img {
 		<td>2018/7/5 2:01:08 </td>
 		<td>张晓亮</td>
 		<td>对【工程化&构建】目录下内容进行了编辑</td>
-		<td>上传到了 GitHub</td>
+		<td>提交到了 GitHub</td>
+	</tr>
+	<tr>
+		<td>2018/7/5 20:01:47 </td>
+		<td>张晓亮</td>
+		<td>对【主流框架】目录下【架构模式：MVC、MVP、MVVM】进行了编辑</td>
+		<td>无</td>
+	</tr>
+	<tr>
+		<td>2018/7/6 1:49:44 </td>
+		<td>张晓亮</td>
+		<td>对【主流框架】目录下【AngularJS】进行了编辑</td>
+		<td>无</td>
+	</tr>
+	<tr>
+		<td>2018/7/10 3:46:40 </td>
+		<td>张晓亮</td>
+		<td>对【主流框架】目录下【React】进行了编辑</td>
+		<td>提交到了 GitHub</td>
 	</tr>
 </table>
 <hr />
@@ -964,7 +984,7 @@ ECMAScript和JavaScript
 </ul>
 <h3>历史版本</h3>
 <table style="border: 1;">
-	<caption>ECMAScript 历史版本</caption>
+	<caption style="font-family: '微软雅黑';">ECMAScript 历史版本</caption>
 	<tr>
 		<th>时间</th>
 		<th>ECMA</th>
@@ -2206,9 +2226,384 @@ node_modules
 <hr />
 <h1>主流框架</h1>
 <h2>架构模式：MVC、MVP、MVVM</h2>
+<h3>MVC 模式</h3>
+<table style="border: 1;">
+	<caption style="font-family: '微软雅黑';">MVC 模式</caption>
+	<tr>
+		<td>M</td>
+		<td>Model</td>
+		<td>模型-数据</td>
+	</tr>
+	<tr>
+		<td>V</td>
+		<td>View</td>
+		<td>视图-表现层</td>
+	</tr>
+	<tr>
+		<td>C</td>
+		<td>Controller</td>
+		<td>控制器-业务逻辑</td>
+	</tr>
+</table>
+<ol>
+<li>M和V耦合度高</li>
+<li>C特别臃肿</li>
+</ol>
+<h3>MVP 模式</h3>
+<table style="border: 1;">
+	<caption style="font-family: '微软雅黑';">MVP 模式</caption>
+	<tr>
+		<td>M</td>
+		<td>Model</td>
+		<td>模型-数据</td>
+	</tr>
+	<tr>
+		<td>V</td>
+		<td>View</td>
+		<td>视图-表现层</td>
+	</tr>
+	<tr>
+		<td>P</td>
+		<td>Presenter</td>
+		<td>主持人</td>
+	</tr>
+</table>
+<ol>
+<li>M和V没有耦合</li>
+<li>P特别特别臃肿</li>
+</ol>
+<h3>MVVM 模式</h3>
+<table style="border: 1;">
+	<caption style="font-family: '微软雅黑';">MVVM 模式</caption>
+	<tr>
+		<td>M</td>
+		<td>Model</td>
+		<td>模型-数据</td>
+	</tr>
+	<tr>
+		<td>V</td>
+		<td>View</td>
+		<td>视图-表现层</td>
+	</tr>
+	<tr>
+		<td>VM</td>
+		<td>ViewModel</td>
+		<td></td>
+	</tr>
+</table>
+<ol>
+<li>M和V没有耦合</li>
+</ol>
 <h2>Vue</h2>
 <h2>React</h2>
+<h3>模块化和组件化</h3>
+<ol>
+<li><strong>模块化：</strong>是从<strong>代码</strong>的角度来进行分析的；把一些可复用的代码，抽离为单个的模块；便于项目的维护和开发；</li>
+<li><strong>组件化：</strong> 是从 <strong>UI 界面</strong>的角度 来进行分析的；把一些可服用的UI元素，抽离为单独的组件；便于项目的维护和开发；</li>
+<li><strong>组件化的好处：</strong>随着项目规模的增大，手里的组件越来越多；很方便就能把现有的组件，拼接为一个完整的页面；</li>
+</ol>
+<h3>虚拟 DOM</h3>
+<ol>
+<li><strong>DOM 的本质</strong>：浏览器中的概念，用JS对象来表示 页面上的元素，并提供了操作 DOM 对象的API；</li>
+<li><strong>React 中的虚拟DOM</strong>：是框架中的概念，是程序员 用JS对象来模拟 页面上的 DOM 和 DOM嵌套；</li>
+<li><strong>为什么要实现虚拟 DOM（虚拟DOM的目的）：</strong>为了实现页面中， DOM 元素的高效更新</li>
+<li>
+<p><strong>DOM 和虚拟 DOM 的区别</strong>：</p>
+<ul>
+<li>
+<p><strong>DOM：</strong>浏览器中，提供的概念；用JS对象，表示页面上的元素，并提供了操作元素的API；</p>
+</li>
+<li>
+<p><strong>虚拟 DOM：</strong>是框架中的概念；而是开发框架的程序员，手动用JS对象来模拟DOM元素和嵌套关系；</p>
+<ul>
+<li>本质：用JS对象，来模拟DOM元素和嵌套关系；</li>
+<li>目的：就是为了实现页面元素的高效更新；</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3>Diff算法</h3>
+<ol>
+<li>
+<p><strong>tree diff:</strong>新旧两棵DOM树，逐层对比的过程，就是 Tree Diff；当整颗DOM逐层对比完毕，则所有需要被按需更新的元素，必然能够找到；</p>
+</li>
+<li>
+<p><strong>component diff：</strong>在进行Tree Diff的时候，每一层中，组件级别的对比，叫做 Component Diff；</p>
+<ul>
+<li>如果对比前后，组件的类型相同，则<strong>暂时</strong>认为此组件不需要被更新；</li>
+<li>如果对比前后，组件类型不同，则需要移除旧组件，创建新组件，并追加到页面上；</li>
+</ul>
+</li>
+<li>
+<p><strong>element diff:</strong>在进行组件对比的时候，如果两个组件类型相同，则需要进行元素级别的对比，这叫做 Element Diff；</p>
+</li>
+</ol>
+<h3>创建基本的webpack4.x项目</h3>
+<ol>
+<li>
+<p>快速初始化项目  
+</p>
+<pre><code>  1 npm init -y
+</code></pre>
+
+</li>
+<li>在项目根目录创建 <code>src</code> 源代码目录和 <code>dist</code> 产品目录</li>
+<li>在 <code>src</code> 目录下创建 <code>index.html</code> 和 <code>index.js</code></li>
+<li>
+<p>安装 <code>webpack</code>  
+</p>
+<pre><code>  1 cnpm i webpack webpack-cli -D
+</code></pre>
+
+</li>
+<li>
+<p>在根目录创建并配置 <code>webpack.config.js</code> 文件</p>
+<pre><code>  1 // 向外暴露一个打包的配置对象；因为 webpack 是基于Node构建的；所以 webpack 支持所有Node API 和语法
+  2 module.exports = {
+  3   mode: 'development', // development   production
+  4   // 在 webpack 4.x 中，有一个很大的特性，就是约定大于配置，约定默认的打包入口路径是 src -&gt; index.js
+  5 }
+</code></pre>
+
+</li>
+<li>
+注意：webpack 4.x 提供了约定大于配置的概念；目的是为了尽量减少配置文件的体积；
+<ul>
+<li>
+默认约定了：
+<ul>
+<li>打包的入口是 <code>src/index.js</code></li>
+<li>打包的输出文件是 <code>dist/main.js</code></li>
+</ul>
+</li>
+<li>4.x 中 新增了<code>mode</code>选项(为必选项)，可选的值为： <code>development</code> 和 <code>production</code>;</li>
+</ul>
+</li>
+</ol>
+<h3>实时打包编译</h3>
+<ol>
+<li>
+<p>安装 <code>webpack-dev-server</code></p>
+<p>1 cnpm i webpack-dev-server -D</p>
+</li>
+<li>
+<p>配置 <code>package.json</code> 文件</p>
+<pre><code>  1 &quot;scripts&quot;: {
+  2   &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,
+  3   &quot;dev&quot;: &quot;webpack-dev-server --open --port 3000 --hot --host 127.0.0.1&quot;
+  4 },
+</code></pre>
+
+</li>
+<li>
+<p>将 <code>index.html</code> 放入内存中</p>
+<ol>
+<li>
+<p>安装 <code>html-webpack-plugin</code>  
+</p>
+<pre><code>  1 cnpm i html-webpack-plugin -D
+</code></pre>
+
+</li>
+<li>
+<p>配置 <code>webpack.config.js</code> 文件  
+</p>
+<pre><code>  1 const path = require('path')
+  2 const HtmlWebPackPlugin = require('html-webpack-plugin') // 导入 在内存中自动生成 index 页面的插件
+  3 
+  4 // 创建一个插件的实例对象
+  5 const htmlPlugin = new HtmlWebPackPlugin({
+  6   template: path.join(__dirname, './src/index.html'), // 源文件
+  7   filename: 'index.html' // 生成的内存中首页的名称
+  8 })
+  9 
+ 10 // 向外暴露一个打包的配置对象；因为 webpack 是基于Node构建的；所以 webpack 支持所有Node API 和语法
+ 11 module.exports = {
+ 12   mode: 'development', // development   production
+ 13   // 在 webpack 4.x 中，有一个很大的特性，就是约定大于配置，约定默认的打包入口路径是 src -&gt; index.js
+ 14   plugins: [
+ 15     htmlPlugin
+ 16   ]
+ 17 }
+</code></pre>
+
+</li>
+</ol>
+</li>
+</ol>
+<h3>在项目中使用 react</h3>
+<ol>
+<li>
+<p>安装包  
+</p>
+<pre><code>  1 cnpm i react react-dom -S
+</code></pre>
+
+<ul>
+<li>react：专门用于创建组件和虚拟DOM的，同时组件的生命周期都在这个包中</li>
+<li>react-dom：专门进行DOM操作的，最主要的应用场景，就是    <code>ReactDOM.render()</code></li>
+</ul>
+</li>
+<li>
+<p>在 <code>index.html</code> 页面中，创建容器：</p>
+<pre><code>  1 &lt;!-- 容器，将来使用 React 创建的虚拟DOM元素，都会被渲染到这个指定的容器中 --&gt;
+  2 &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+</code></pre>
+
+</li>
+<li>
+<p>编辑 <code>index.js</code> 文件</p>
+<pre><code>  1 // 1. 这两个导入时候，接收的成员名称，必须这么写
+  2 import React from 'react' // 创建组件、虚拟DOM元素，生命周期
+  3 import ReactDOM from 'react-dom' // 把创建好的 组件 和 虚拟DOM 放到页面上展示的
+  4 
+  5 // 2. 创建虚拟DOM元素
+  6 // 参数1： 创建的元素的类型，字符串，表示元素的名称
+  7 // 参数2： 是一个对象或 null, 表示 当前这个 DOM 元素的属性
+  8 // 参数3： 子节点（包括 其它 虚拟DOM 获取 文本子节点）
+  9 // 参数n: 其它子节点
+ 10 //  &lt;h1 id=&quot;myh1&quot; title=&quot;this is a h1&quot;&gt;这是一个H1&lt;/h1&gt;
+ 11 // const myh1 = React.createElement('h1', null, '这是一个H1')
+ 12 const myh1 = React.createElement('h1', { id: 'myh1', title: 'this is a h1' }, '这是一个H1')
+ 13 
+ 14 const mydiv = React.createElement('div', null, '这是一个div元素', myh1)
+ 15 
+ 16 // 3. 使用 ReactDOM 把虚拟DOM 渲染到页面上
+ 17 // 参数1： 要渲染的那个虚拟DOM元素
+ 18 // 参数2： 指定页面上的DOM元素，当作容器 
+ 19 ReactDOM.render(mydiv, document.getElementById('app'))
+ 20 // Target container is not a DOM element.  经过分析，猜测：第二个参数接收的应该是一个  DOM 元素而不是 选择器
+</code></pre>
+
+</li>
+</ol>
+<h3>JSX语法</h3>
+<ol>
+<li>
+<p>安装 <code>babel</code> 插件</p>
+<pre><code>  1 cnpm i babel-core babel-loader babel-plugin-transform-runtime -D
+  2 cnpm i babel-preset-env babel-preset-stage-0 -D
+</code></pre>
+
+</li>
+<li>
+<p>安装能够识别转换jsx语法的包 <code>babel-preset-react</code></p>
+<pre><code>  1 cnpm i babel-preset-react -D
+</code></pre>
+
+</li>
+<li>
+<p>添加 <code>.babelrc</code> 配置文件</p>
+<pre><code>  1 {
+  2   &quot;presets&quot;: [&quot;env&quot;, &quot;stage-0&quot;, &quot;react&quot;],
+  3   &quot;plugins&quot;: [&quot;transform-runtime&quot;]
+  4 }
+</code></pre>
+
+</li>
+<li>
+<p>添加 babel-loader 配置项</p>
+<pre><code>  1 // webpack 默认只能打包处理 .js 后缀名类型的文件；像 .png .vue 无法主动处理，所以要配置第三方的loader；
+  2 module.exports = {
+  3   mode: 'development', // development   production
+  4   plugins: [
+  5     htmlPlugin
+  6   ],
+  7   module: { // 所有第三方 模块的配置规则
+  8     rules: [ // 第三方匹配规则
+  9       { test: /\.js|jsx$/, use: 'babel-loader', exclude: /node_modules/ }, // 千万别忘记添加 exclude 排除项
+ 10     ]
+ 11   },
+ 12   resolve: {
+ 13     extensions: ['.js', '.jsx', '.json'], // 表示，这几个文件的后缀名，可以省略不写
+ 14     alias: { // 表示别名
+ 15       '@': path.join(__dirname, './src') // 这样，@ 就表示 项目根目录中 src 的这一层路径
+ 16     }
+ 17   }
+ 18 }
+</code></pre>
+
+</li>
+<li>
+<p>编辑 <code>index.js</code> 文件</p>
+<pre><code>  1 // 1. 导入包
+  2 import React from 'react'
+  3 import ReactDOM from 'react-dom'
+  4 
+  5 // 2. 创建虚拟DOM元素
+  6 // 可以使用 babel 来转换 这些 JS 中的标签；
+  7 // JSX 语法的本质，还是在运行的时候，被转换成了 React.createElement 形式来执行的；
+  8 const mydiv = &lt;div id=&quot;mydiv&quot; title=&quot;div aaa&quot;&gt;
+  9                 这是一个div元素
+ 10                 &lt;h1&gt;这是一个H1&lt;/h1&gt;
+ 11             &lt;/div&gt;
+ 12 
+ 13 // 3. 调用 render 函数渲染
+ 14 ReactDOM.render(mydiv, document.getElementById('app'))
+</code></pre>
+
+</li>
+</ol>
 <h2>AngularJS</h2>
+<h3>AngularJs 官网</h3>
+<p><a href="https://angularjs.org/" title="AngularJs 官网">AngularJs 官网</a><br />
+<a href="http://www.angularjs.net.cn/" title="AngularJS 中文网">AngularJS 中文网</a><br />
+<a href="./www/AngularJS/angular.js" title="angular.js v1.6.4">angular.js v1.6.4</a></p>
+<h3>ng-model</h3>
+<ol>
+<li>
+双向绑定<br />
+*自动同步数据和视图   
+
+</li>
+</ol>
+<h3>ng-bind</h3>
+<ol>
+<li>
+单向绑定
+*数据-&gt;视图
+</li>
+</ol>
+<h3>ng-app</h3>
+<ol>
+<li>范围</li>
+<li>引入模块</li>
+</ol>
+<h3>{{表达式}}</h3>
+<h3>ng-init</h3>
+<ol>
+<li>
+<p>初始值
+示例：  
+</p>
+<pre><code>  1 &lt;body ng-init=&quot;a=0;b=0;&quot;&gt;
+  2     &lt;input type=&quot;text&quot; ng-model=&quot;a&quot;&gt;
+  3     &lt;input type=&quot;text&quot; ng-model=&quot;b&quot;&gt;
+  4     &lt;span&gt;{{a*b}}&lt;/span&gt;
+  5 &lt;/body&gt;
+</code></pre>
+
+</li>
+</ol>
+<h3>ng-repeat</h3>
+<ol>
+<li>
+<p>循环<br />
+示例：  
+</p>
+<pre><code>  1 &lt;body ng-init=&quot;arr=[12,5,8]&quot;&gt;
+  2     &lt;ul&gt;
+  3         &lt;li ng-repeat=&quot;(index,val) in arr&quot;&gt;{{index}}, {{val}}&lt;/li&gt;
+  4     &lt;/ul&gt;
+  5     &lt;ul&gt;
+  6         &lt;li ng-repeat=&quot;val in arr&quot;&gt;{{$index}}, {{val}}&lt;/li&gt;
+  7     &lt;/ul&gt;
+  8 &lt;/body&gt;
+</code></pre>
+
+</li>
+</ol>
 <hr />
 <h1>移动 APP (Web/Native/Hybrid)</h1>
 <h2>React Native</h2>
