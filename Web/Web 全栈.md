@@ -3,7 +3,7 @@
 # 写在前头 #
 <p style="font-size: 18px;">创建时间：2018/6/23 18:43 </p> 
 <p style="font-size: 18px;"><a href="https://github.com/zhangxl98/StudyNotes/tree/master/Web">GitHub</a></p> 
-<p style="font-size: 18px;">更新日志：</p> 
+### 更新日志 ###
 <table style="border: 1;">
 	<caption><b style="font-size: 22px;font-family: '微软雅黑';">更新日志</b></caption>
 	<tr>
@@ -30,8 +30,7 @@
 	<tr>
 		<td>2018/6/24 14:36:12 </td>
 		<td>张晓亮</td>
-		<td>基本完成了
-【JavaScript 高级】目录下【ECMAScript 6】的编辑</td>
+		<td>基本完成了【JavaScript 高级】目录下【ECMAScript 6】的编辑</td>
 		<td>无</td>
 	</tr>
 	<tr>
@@ -70,7 +69,46 @@
 		<td>对【主流框架】目录下【React】进行了编辑</td>
 		<td>提交到了 GitHub</td>
 	</tr>
+	<tr>
+		<td>2018/7/11 15:47:56 </td>
+		<td>张晓亮</td>
+		<td>对【全栈】目录下【Node.js】进行了补充</td>
+		<td>无</td>
+	</tr>
+	<tr>
+		<td>2018/7/11 16:10:42 </td>
+		<td>张晓亮</td>
+		<td>添加并编辑了【参考书籍】、【参考网站】和【参考论坛】</td>
+		<td>无</td>
+	</tr>
 </table>
+### 参考书籍 ###
+[《JavaScript高级程序设计（第3版）》](https://book.douban.com/subject/10546125/ "《JavaScript高级程序设计（第3版）》")  
+[《JavaScript权威指南(第6版)》](https://book.douban.com/subject/10549733/ "《JavaScript权威指南(第6版)》")  
+[《ES6标准入门（第3版）》](https://book.douban.com/subject/27127030/ "《ES6标准入门（第3版）》")  
+[《了不起的Node.js》](https://book.douban.com/subject/25767596/ "《了不起的Node.js》")  
+[《深入浅出Node.js》](https://book.douban.com/subject/25768396/ "《深入浅出Node.js》")  
+[《Node.js入门经典》](https://book.douban.com/subject/23780706/ "《Node.js入门经典》")  
+[《Node.js开发指南》](https://book.douban.com/subject/10789820/ "《Node.js开发指南》")  
+[《鸟哥的Linux私房菜》](https://book.douban.com/subject/4889838/ "《鸟哥的Linux私房菜》")  
+[《鸟哥的Linux私房菜》](https://book.douban.com/subject/10794788/ "《鸟哥的Linux私房菜》")  
+### 参考网站 ###
+[GitHub](https://github.com "GitHub")  
+[W3school](http://www.w3school.com.cn/ "W3school")  
+[nodejs 官网](https://nodejs.org/zh-cn/ "nodejs 官网")  
+[Node.js 中文网](http://nodejs.cn/ "Node.js 中文网")  
+[Yeoman 官网](http://yeoman.io/ "Yeoman 官网")  
+[Bower 官网](https://bower.io/ "Bower 官网")  
+[Grunt 官网](https://gruntjs.com/ "Grunt 官网")  
+[Grunt 中文网](http://www.gruntjs.net/ "Grunt 中文网")  
+[Vue 官网](https://cn.vuejs.org/ "Vue 官网")  
+[React 官网](https://reactjs.org/ "React 官网")  
+[AngularJs 官网](https://angularjs.org/ "AngularJs 官网")  
+[AngularJS 中文网](http://www.angularjs.net.cn/ "AngularJS 中文网")  
+[慕课网](https://www.imooc.com/ "慕课网")  
+[网易云课堂](http://study.163.com/ "网易云课堂")  
+### 参考论坛 ###
+[Infoq 深入浅出Node.js系列](http://www.infoq.com/cn/articles/what-is-nodejs "Infoq深入浅出Node.js系列")  
 ***
 # JavaScript 高级 #
 ## 面向对象、继承、闭包 ##
@@ -757,6 +795,60 @@
 # 全栈 #
 ## 前后端通信 ##
 ## Node.js ##
+### 安装 Node 和 NPM ###
+1. 安装
+
+		  1 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+		  2 sudo apt-get install -y nodejs
+2. 检查
+
+		  1 node -v
+		  2 npm -v
+3. 改为淘宝镜像
+
+		  1 npm set registry https://registry.npm.taobao.org/
+		  2 npm get registry
+4. 或者安装 cnpm
+
+		  1 npm install -g cnpm --registry=https://registry.npm.taobao.org
+### 安装 Atom ###
+1. 安装
+
+		  1 sudo add-apt-repository ppa:webupd8team/atom  
+		  2 sudo apt-get update  
+		  3 sudo apt-get install atom 
+2. 安装插件
+	+ vim-mode
+		+ VIM 模式
+	+ atom-beautify
+		+ 代码格式化
+		+ `Ctrl+Alt+B`
+	+ atom ternjs
+		+ JS 代码智能提示补全
+	+ autocomplete-paths
+		+ 自动补全文件路径
+	+ docblockr
+		+ 文档化注释
+	+ emmet
+		+ 基于 Emmet 语法产生 HTML
+	+ file-icons
+		+ 为不同类型的文件添加一个图标
+	+ git-plus
+		+ 在编辑器里管理 git 项目
+	+ javascript-snippets
+		+ JS 原生代码补全
+	+ minmap
+		+ 代码小地图
+	+ pigments
+		+ CSS 根据颜色代码显示颜色
+	+ react
+		+ JSX
+	+ script
+		+ 脚本运行
+		+ 启动：`Ctrl+Shift+B`
+		+ 关闭：`Ctrl+Q`
+	+ highlight-selected
+		+ 通过双击一个词来高亮整个文件相同的词
 ### http 协议 ###
 1. resquest 请求
 2. response 响应  
@@ -932,6 +1024,58 @@
 ***
 # 工程化&构建 #
 ## Git、SVN ##
+### 安装及配置 Git ###
+1. 安装 Git  
+
+		  1 sudo apt-get install git
+2. 配置 Git
+
+		  1 git config --global user.name 'your name'
+		  2 git config --global user.email 'your email address'
+3. 生成公钥
+
+		  1 ssh-keygen -C 'your email address' -t rsa
+		  2 以下全部 Enter
+4. 上传公钥
+	1. 复制公钥
+	
+			  1 cd ~/.ssh
+			  2 gedit id_rsa.pub
+			  3 复制全部内容
+	2. 上传公钥  
+		+ 访问 `https://github.com/settings/keys`
+		+ 点击 `New SSH key`
+		+ `Title` 任意,`Key` 为刚才复制的内容
+		+ 点击 `Add SSH key`
+5. 测试连接
+		  1 ssh -T git@github.com
+### 克隆 ###
++ 克隆
+
+		  1 git clone https://github.com/[your name]/[your repository name].git
++ 更新
+
+		  1 git fetch origin
++ 合并
+
+		  1 git merge origin/master
+### 提交 ###
++ 查看状态
+
+		  1 git status
++ 添加文件
+
+		  1 git add [your file]
++ 提交到本地库
+
+		  1 git commit
+		  2 [add your summary]
++ 提交到 GitHub
+
+		  1 git push
+		  2 [your name]
+		  3 [your password]
+
 ## Yeoman 脚手架 ##
 ### Yeoman 官网 ###
 [Yeoman 官网](http://yeoman.io/ "Yeoman 官网")
@@ -1114,7 +1258,7 @@
 ### 实时打包编译 ###
 1. 安装 `webpack-dev-server`
 
-	  1 cnpm i webpack-dev-server -D
+		  1 cnpm i webpack-dev-server -D
 2. 配置 `package.json` 文件
 
 		  1 "scripts": {
@@ -1151,10 +1295,15 @@
    + react：专门用于创建组件和虚拟DOM的，同时组件的生命周期都在这个包中
    + react-dom：专门进行DOM操作的，最主要的应用场景，就是    `ReactDOM.render()`
 
-2. 在 `index.html` 页面中，创建容器：
+2. 在 `index.html` 页面中创建容器：
 
 		  1 <!-- 容器，将来使用 React 创建的虚拟DOM元素，都会被渲染到这个指定的容器中 -->
 		  2 <div id="app"></div>
+	+ **特别提醒**
+		+ atom 智能代码补全的是：
+
+				  1 <div class="app"></div>
+		+ 需要手动改正
 3. 编辑 `index.js` 文件
 
 		  1 // 1. 这两个导入时候，接收的成员名称，必须这么写
@@ -1233,17 +1382,17 @@
 [AngularJS 中文网](http://www.angularjs.net.cn/ "AngularJS 中文网")  
 [angular.js v1.6.4](./www/AngularJS/angular.js "angular.js v1.6.4")
 ### ng-model ###
-1. 双向绑定  
-	*自动同步数据和视图   
++ 双向绑定  
+	+ *自动同步数据和视图   
 ### ng-bind ###
-1. 单向绑定
-	*数据->视图
++ 单向绑定
+	+ *数据->视图
 ### ng-app ###
 1. 范围
 2. 引入模块
 ### {{表达式}} ###
 ### ng-init  ###
-1. 初始值
+1. 初始值  
 	示例：  
 
 		  1 <body ng-init="a=0;b=0;">

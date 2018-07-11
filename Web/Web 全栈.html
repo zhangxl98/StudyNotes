@@ -892,7 +892,7 @@ img {
 <h1>写在前头</h1>
 <p style="font-size: 18px;">创建时间：2018/6/23 18:43 </p> 
 <p style="font-size: 18px;"><a href="https://github.com/zhangxl98/StudyNotes/tree/master/Web">GitHub</a></p> 
-<p style="font-size: 18px;">更新日志：</p> 
+<h3>更新日志</h3>
 <table style="border: 1;">
 	<caption><b style="font-size: 22px;font-family: '微软雅黑';">更新日志</b></caption>
 	<tr>
@@ -919,8 +919,7 @@ img {
 	<tr>
 		<td>2018/6/24 14:36:12 </td>
 		<td>张晓亮</td>
-		<td>基本完成了
-【JavaScript 高级】目录下【ECMAScript 6】的编辑</td>
+		<td>基本完成了【JavaScript 高级】目录下【ECMAScript 6】的编辑</td>
 		<td>无</td>
 	</tr>
 	<tr>
@@ -959,7 +958,46 @@ img {
 		<td>对【主流框架】目录下【React】进行了编辑</td>
 		<td>提交到了 GitHub</td>
 	</tr>
+	<tr>
+		<td>2018/7/11 15:47:56 </td>
+		<td>张晓亮</td>
+		<td>对【全栈】目录下【Node.js】进行了补充</td>
+		<td>无</td>
+	</tr>
+	<tr>
+		<td>2018/7/11 16:10:42 </td>
+		<td>张晓亮</td>
+		<td>添加并编辑了【参考书籍】、【参考网站】和【参考论坛】</td>
+		<td>无</td>
+	</tr>
 </table>
+<h3>参考书籍</h3>
+<p><a href="https://book.douban.com/subject/10546125/" title="《JavaScript高级程序设计（第3版）》">《JavaScript高级程序设计（第3版）》</a><br />
+<a href="https://book.douban.com/subject/10549733/" title="《JavaScript权威指南(第6版)》">《JavaScript权威指南(第6版)》</a><br />
+<a href="https://book.douban.com/subject/27127030/" title="《ES6标准入门（第3版）》">《ES6标准入门（第3版）》</a><br />
+<a href="https://book.douban.com/subject/25767596/" title="《了不起的Node.js》">《了不起的Node.js》</a><br />
+<a href="https://book.douban.com/subject/25768396/" title="《深入浅出Node.js》">《深入浅出Node.js》</a><br />
+<a href="https://book.douban.com/subject/23780706/" title="《Node.js入门经典》">《Node.js入门经典》</a><br />
+<a href="https://book.douban.com/subject/10789820/" title="《Node.js开发指南》">《Node.js开发指南》</a><br />
+<a href="https://book.douban.com/subject/4889838/" title="《鸟哥的Linux私房菜》">《鸟哥的Linux私房菜》</a><br />
+<a href="https://book.douban.com/subject/10794788/" title="《鸟哥的Linux私房菜》">《鸟哥的Linux私房菜》</a>  </p>
+<h3>参考网站</h3>
+<p><a href="https://github.com" title="GitHub">GitHub</a><br />
+<a href="http://www.w3school.com.cn/" title="W3school">W3school</a><br />
+<a href="https://nodejs.org/zh-cn/" title="nodejs 官网">nodejs 官网</a><br />
+<a href="http://nodejs.cn/" title="Node.js 中文网">Node.js 中文网</a><br />
+<a href="http://yeoman.io/" title="Yeoman 官网">Yeoman 官网</a><br />
+<a href="https://bower.io/" title="Bower 官网">Bower 官网</a><br />
+<a href="https://gruntjs.com/" title="Grunt 官网">Grunt 官网</a><br />
+<a href="http://www.gruntjs.net/" title="Grunt 中文网">Grunt 中文网</a><br />
+<a href="https://cn.vuejs.org/" title="Vue 官网">Vue 官网</a><br />
+<a href="https://reactjs.org/" title="React 官网">React 官网</a><br />
+<a href="https://angularjs.org/" title="AngularJs 官网">AngularJs 官网</a><br />
+<a href="http://www.angularjs.net.cn/" title="AngularJS 中文网">AngularJS 中文网</a><br />
+<a href="https://www.imooc.com/" title="慕课网">慕课网</a><br />
+<a href="http://study.163.com/" title="网易云课堂">网易云课堂</a>  </p>
+<h3>参考论坛</h3>
+<p><a href="http://www.infoq.com/cn/articles/what-is-nodejs" title="Infoq深入浅出Node.js系列">Infoq 深入浅出Node.js系列</a>  </p>
 <hr />
 <h1>JavaScript 高级</h1>
 <h2>面向对象、继承、闭包</h2>
@@ -1860,6 +1898,133 @@ Promise的两个方法：
 <h1>全栈</h1>
 <h2>前后端通信</h2>
 <h2>Node.js</h2>
+<h3>安装 Node 和 NPM</h3>
+<ol>
+<li>
+<p>安装</p>
+<pre><code>  1 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+  2 sudo apt-get install -y nodejs
+</code></pre>
+
+</li>
+<li>
+<p>检查</p>
+<pre><code>  1 node -v
+  2 npm -v
+</code></pre>
+
+</li>
+<li>
+<p>改为淘宝镜像</p>
+<pre><code>  1 npm set registry https://registry.npm.taobao.org/
+  2 npm get registry
+</code></pre>
+
+</li>
+</ol>
+<h3>安装 Atom</h3>
+<ol>
+<li>
+<p>安装</p>
+<pre><code>  1 sudo add-apt-repository ppa:webupd8team/atom  
+  2 sudo apt-get update  
+  3 sudo apt-get install atom 
+</code></pre>
+
+</li>
+<li>
+安装插件
+<ul>
+<li>
+vim-mode
+<ul>
+<li>VIM 模式</li>
+</ul>
+</li>
+<li>
+atom-beautify
+<ul>
+<li>代码格式化</li>
+<li><code>Ctrl+Alt+B</code></li>
+</ul>
+</li>
+<li>
+atom ternjs
+<ul>
+<li>JS 代码智能提示补全</li>
+</ul>
+</li>
+<li>
+autocomplete-paths
+<ul>
+<li>自动补全文件路径</li>
+</ul>
+</li>
+<li>
+docblockr
+<ul>
+<li>文档化注释</li>
+</ul>
+</li>
+<li>
+emmet
+<ul>
+<li>基于 Emmet 语法产生 HTML</li>
+</ul>
+</li>
+<li>
+file-icons
+<ul>
+<li>为不同类型的文件添加一个图标</li>
+</ul>
+</li>
+<li>
+git-plus
+<ul>
+<li>在编辑器里管理 git 项目</li>
+</ul>
+</li>
+<li>
+javascript-snippets
+<ul>
+<li>JS 原生代码补全</li>
+</ul>
+</li>
+<li>
+minmap
+<ul>
+<li>代码小地图</li>
+</ul>
+</li>
+<li>
+pigments
+<ul>
+<li>CSS 根据颜色代码显示颜色</li>
+</ul>
+</li>
+<li>
+react
+<ul>
+<li>JSX</li>
+</ul>
+</li>
+<li>
+script
+<ul>
+<li>脚本运行</li>
+<li>启动：<code>Ctrl+Shift+B</code></li>
+<li>关闭：<code>Ctrl+Q</code></li>
+</ul>
+</li>
+<li>
+highlight-selected
+<ul>
+<li>通过双击一个词来高亮整个文件相同的词</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 <h3>http 协议</h3>
 <ol>
 <li>resquest 请求</li>
@@ -2109,6 +2274,108 @@ node_modules
 <hr />
 <h1>工程化&amp;构建</h1>
 <h2>Git、SVN</h2>
+<h3>安装及配置 Git</h3>
+<ol>
+<li>
+<p>安装 Git  
+</p>
+<pre><code>  1 sudo apt-get install git
+</code></pre>
+
+</li>
+<li>
+<p>配置 Git</p>
+<pre><code>  1 git config --global user.name 'your name'
+  2 git config --global user.email 'your email address'
+</code></pre>
+
+</li>
+<li>
+<p>生成公钥</p>
+<pre><code>  1 ssh-keygen -C 'your email address' -t rsa
+  2 以下全部 Enter
+</code></pre>
+
+</li>
+<li>
+<p>上传公钥</p>
+<ol>
+<li>
+<p>复制公钥</p>
+<pre><code>  1 cd ~/.ssh
+  2 gedit id_rsa.pub
+  3 复制全部内容
+</code></pre>
+
+</li>
+<li>
+上传公钥  
+
+<ul>
+<li>访问 <code>https://github.com/settings/keys</code></li>
+<li>点击 <code>New SSH key</code></li>
+<li><code>Title</code> 任意,<code>Key</code> 为刚才复制的内容</li>
+<li>点击 <code>Add SSH key</code></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+测试连接
+	  1 ssh -T git@github.com
+</li>
+</ol>
+<h3>克隆</h3>
+<ul>
+<li>
+<p>克隆</p>
+<pre><code>  1 git clone https://github.com/[your name]/[your repository name].git
+</code></pre>
+
+</li>
+<li>
+<p>更新</p>
+<pre><code>  1 git fetch origin
+</code></pre>
+
+</li>
+<li>
+<p>合并</p>
+<pre><code>  1 git merge origin/master
+</code></pre>
+
+</li>
+</ul>
+<h3>提交</h3>
+<ul>
+<li>
+<p>查看状态</p>
+<pre><code>  1 git status
+</code></pre>
+
+</li>
+<li>
+<p>添加文件</p>
+<pre><code>  1 git add [your file]
+</code></pre>
+
+</li>
+<li>
+<p>提交到本地库</p>
+<pre><code>  1 git commit
+  2 [add your summary]
+</code></pre>
+
+</li>
+<li>
+<p>提交到 GitHub</p>
+<pre><code>  1 git push
+  2 [your name]
+  3 [your password]
+</code></pre>
+
+</li>
+</ul>
 <h2>Yeoman 脚手架</h2>
 <h3>Yeoman 官网</h3>
 <p><a href="http://yeoman.io/" title="Yeoman 官网">Yeoman 官网</a></p>
@@ -2446,7 +2713,7 @@ node_modules
 </ul>
 </li>
 <li>
-<p>在 <code>index.html</code> 页面中，创建容器：</p>
+<p>在 <code>index.html</code> 页面中创建容器：</p>
 <pre><code>  1 &lt;!-- 容器，将来使用 React 创建的虚拟DOM元素，都会被渲染到这个指定的容器中 --&gt;
   2 &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
 </code></pre>
@@ -2551,20 +2818,25 @@ node_modules
 <a href="http://www.angularjs.net.cn/" title="AngularJS 中文网">AngularJS 中文网</a><br />
 <a href="./www/AngularJS/angular.js" title="angular.js v1.6.4">angular.js v1.6.4</a></p>
 <h3>ng-model</h3>
-<ol>
+<ul>
 <li>
-双向绑定<br />
-*自动同步数据和视图   
+双向绑定  
 
+<ul>
+<li>*自动同步数据和视图   
 </li>
-</ol>
+</ul>
+</li>
+</ul>
 <h3>ng-bind</h3>
-<ol>
+<ul>
 <li>
 单向绑定
-*数据-&gt;视图
+<ul>
+<li>*数据-&gt;视图</li>
+</ul>
 </li>
-</ol>
+</ul>
 <h3>ng-app</h3>
 <ol>
 <li>范围</li>
@@ -2574,7 +2846,7 @@ node_modules
 <h3>ng-init</h3>
 <ol>
 <li>
-<p>初始值
+<p>初始值<br />
 示例：  
 </p>
 <pre><code>  1 &lt;body ng-init=&quot;a=0;b=0;&quot;&gt;
