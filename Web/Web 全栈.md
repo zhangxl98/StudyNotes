@@ -800,6 +800,7 @@
 
 		  1 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 		  2 sudo apt-get install -y nodejs
+		  3 sudo apt-get install -y npm
 2. 检查
 
 		  1 node -v
@@ -1299,11 +1300,6 @@
 
 		  1 <!-- 容器，将来使用 React 创建的虚拟DOM元素，都会被渲染到这个指定的容器中 -->
 		  2 <div id="app"></div>
-	+ **特别提醒**
-		+ atom 智能代码补全的是：
-
-				  1 <div class="app"></div>
-		+ 需要手动改正
 3. 编辑 `index.js` 文件
 
 		  1 // 1. 这两个导入时候，接收的成员名称，必须这么写
