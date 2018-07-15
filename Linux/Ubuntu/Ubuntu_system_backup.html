@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ubuntu_system_backup</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<link rel="shortcut icon" href="http://img.hb.aicdn.com/6b858ec941683756697e9f45d68163e71d28524467df-e61VLG_fw658" />
+
+<link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/vs.css">
+<script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
+<script>
+hljs.tabReplace = ' ';
+hljs.initHighlightingOnLoad();
+</script>
+
+
+<script language="Javascript">
+	document.oncontextmenu = new Function("event.returnValue=false");
+	document.onselectstart = new Function("event.returnValue=false");
+</script>
+<script>
+	(function() {
+		if(!window.console) {
+			window.console = {
+				log: function() {}
+			};
+			return;
+		}
+		var me = 19;
+		var Star = function() {
+			this.x = 0;
+			this.speed = 1;
+			this.y = 0;
+		}
+		var score = 0;
+		var strs = function() {
+			var result = '';
+			for(var i = 0; i < 20; i++) {
+				result += "\n"
+				for(var n = 0; n < 40; n++) {
+					var now = '一'
+					if(i == 19 && n == me) {
+						now = "码"
+					}
+					if(i == 19 && n == me + 1) {
+						now = "农"
+					}
+					stars.forEach(function(star) {
+						var x = Math.floor(star.x);
+						var y = Math.floor(star.y)
+						if(x == n && y == i) {
+							if(Math.abs(star.y - 19) < 1 && (n == me || n == me + 1)) {
+								die()
+							}
+							now = "车"
+						}
+					})
+					result += now;
+
+				}
+
+			}
+			result += "       《全民躲车车》得分：" + score
+			return result;
+		}
+		window.onkeydown = function(e) {
+			if(e.keyCode == 37) {
+				me -= 1;
+				if(me < 0) me = 0;
+			} else if(e.keyCode == 39) {
+				me += 1
+				if(me > 38) me = 38
+			}
+		}
+		var count = 0;
+		var die = function() {
+			clearInterval(timer1)
+			clearInterval(timer2)
+			clearInterval(timer3)
+			setTimeout(function() {
+				console.log("游戏结束，您的得分：" + score + "，｡:.ﾟヽ(｡◕‿◕｡)ﾉﾟ.:｡")
+			}, 100)
+
+		}
+		var stars = []
+		var appearP = 1
+		var timer1, timer2, timer3;
+		var begin = function() {
+			timer1 = setInterval(function() {
+				var createCount = Math.floor(Math.random() * 5 * appearP)
+				for(var i = 0; i < createCount; i++) {
+					var star = new Star();
+					star.x = Math.floor(Math.random() * 40)
+					star.y = 0;
+					star.speed = Math.random() * appearP; //Math.floor(Math.random()*3+1)
+					stars.push(star)
+				}
+
+			}, 1000)
+			timer2 = setInterval(function() {
+				stars.forEach(function(star, i) {
+					star.y += star.speed;
+					if(star.y >= 31) {
+						stars.splice(i, 1);
+						score++
+					}
+				})
+				console.log(strs())
+				count++;
+				if(count > 300) {
+					console.clear()
+					count = 0;
+				}
+			}, 100)
+			timer3 = setInterval(function() {
+				appearP *= 1.1
+			}, 3000)
+		}
+		console.log("这是本文档的彩蛋，祝您游戏愉快( ｡ớ ₃ờ)ھ")
+		console.log("输入 start(); 后即可开始《码农躲车车》游戏！")
+		window.start = function() {
+			appearP = 1.1
+			starts = [];
+			score = 0;
+			me = 19;
+			count = 0;
+			console.log("%c请先用鼠标点击一下弹个车网页页面，游戏需要捕捉网页上的键盘事件（你应该懂吧）！", "font-size:16px;color:#ff6700;")
+			console.log("使用键盘左右键移动最下方的码农，躲开所有的汽车，汽车数量和速度会一直增加，看看谁坚持的最久吧！")
+
+			var countdown = 6;
+			setTimeout(function() {
+				if(countdown-- <= 1) {
+					begin();
+				} else {
+					console.log(countdown)
+					setTimeout(arguments.callee, 1000)
+				}
+			}, 1000)
+			return("倒计时！")
+		}
+	})();
+</script>
+
+<style type="text/css">
+	html {
+		//background-color: #FFFACD;
+	}
+	body {
+		background-color: #C7EDCC;
+	}
+</style>
+
+</head>
+<body>
+<h1>Ubuntu 系统备份与恢复</h1>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;今天(2018-7-15)下午，我为了解决 NVIDIA 画面撕裂的问题，按照某博文的做法操作后，重启，哎～Σ(っ °Д °;)っ，我的 Ubuntu 又双叒叕挂掉了 (︶︹︺) ，( ╯-<em>-)╯┴—┴ ，（#-</em>-)\┯━┯ ，(╯°Д°)╯︵ ┻━┻ 。但是，在经历了比迄今为止装 Windows 系统还要多的重装次数后，我想到了需要给我的 Ubuntu 进行备份 ，所以这次就算你坏了又能怎样(￣^￣) 哼！。这次坏掉，完全进不了系统，开机就显示一条 / 分区磁盘的信息，图也没截，反正就是那里坏了。<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先说一下备份方法吧，其实很简单，因为“Linux 一切皆文件”，甚至她会忠实地执行你给的命令，甚至是“rm -rf /*”。所以，具体的做法就是将你要备份的目录打包成压缩包，然后要恢复的时候再解压回去。<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我这台 Ubuntu 安装的时候是直接按系统默认装的，后来把 /hone 分区用了一个1T 的硬盘分离出去了，所以 / 分区里的东西基本上就是系统全部内容了。/hone 分区一般不会坏，就算坏了，也不影响系统启动，而且作为桌面系统来用，这个分区是占用空间最大的，因此这个分区不需要经常备份，要是你磁盘空间大，我也没什么好说的喽 (¬д¬。)。剩下的 / 分区里面东西很杂很重要，但有部分是我们在运行期间产生的一些垃圾文件之类的，这些就没必要备份了。以下是我写好的备份命令，在这里，我只说 / 分区的备份和恢复，/hone 分区及其他分区的操作自行扩展。 </p>
+<pre><code>tar -cvpzf xxxxxxxxxxxxxxx/ubuntu_system_backup@`date +%Y-%m-%d`.tar.gz --exclude=/proc --exclude=/tmp --exclude=/home --exclude=/lost+found --exclude=/media --exclude=/mnt --exclude=/run /
+</code></pre>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;运行前先切换为 root 用户，避免权限问题。我直接将它打包后存入了 /home 分区，路径问题自行替换，说一下为什么要排除这几个目录吧。 </p>
+<pre><code>/proc：这是系统运行过程中自己产生的，完全没必要备份；
+/tmp：这是临时文件，也是系统的；
+/lost+found：这是用来给你因为非正常关机找回文件用的；
+/media：这是多媒体挂载点，用来挂光盘之类的，没数据；
+/mnt：这是临时挂载点，也没数据；
+/run：这是用来存信息文件的，也是系统自己产生的。
+</code></pre>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这里我把 /home 分区也排除了，因为这是单独作分区的，要是全分在同一个分区，就不能排除。所以建议装系统的时候还是传统四分区比较好，不过现在可以不用给 swap 分区太多空间，毕竟不是十几年前，大容量内存只能是仰望的存在✪ω✪，在人手8G16G 内存的时代，只要没有特殊需求，是不存在内存溢出的，就算不够了，后期再扩大 swapfile 就好。<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在你进行了备份后，可以来一次“rm -rf /*”爽一下๑乛◡乛๑。(逃ε=ε=ε=ε=ε=ε=┌(;￣◇￣)┘)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;说正经的，今天恢复系统也是废了点功夫的，毕竟是第一次嘛(..•˘_˘•..)。首先，因为进不去系统，肯定是要用 Ubuntu Live CD 的，所以需要一个启动盘。然后把你的 / 分区和备份的数据盘挂载上去。最后就可以开始恢复了，也就是解打包到 / 分区挂载的目录下。命令如下，自行跟换路径。  </p>
+<pre><code>tar -xvpzf /xxxxxxxxxx.tar.gz -C /mnt/xxx
+</code></pre>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我一定要吧我曲折的经历说出来o(´^｀)o。因为我的备份数据都在 /home 分区下，我就想直接吧压缩包解压到 / 分区，然后给我无情地报错了(→_←)。既然这样不行，那我就复制出来在解压。关机，U 盘插 Win 上，分一个数据区(因为 U 盘的 Ubuntu 分区是当做光盘的，只读)，开机，复制，过了一会儿，告诉我应为文件太大了，复制失败(分的这个数据区有20G，备份文件就不到10G)（╬￣皿￣）。<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最后我只好拿出我饱经沧桑的 USB 2.0 U 盘来复制了，看着它用着3M/s 的速度复制完后，直接解压到了目标目录。开机，（⊙.⊙），还是之前那样(╯#-_-)╯~~~~~~~~~~~~~~~~~╧═╧ 。看来是那个驱动给我建了个新文件，导致无法进系统的，那就把 / 分区删了吧。补充一下，上面这条解打包命令只会把和包内的内容文件名相同的文件替换掉，新生成的文件不会改变。(终于有机会“rm -rf /*”，有点小激动呢，但是看不到系统坏掉了，有机会我一定来一发(`･ω･´))。删完后，解压，开机，卡在开机 LOGO 了，仔细一想，忘了把之前排除的目录重新建回去了(﹁&quot;﹁) 。建完后，成功进入系统(/≧▽≦/)。撒花｡:.ﾟヽ(｡◕‿◕｡)ﾉﾟ.:｡+ﾟ<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;完。(2018-7-15_23:10)</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
