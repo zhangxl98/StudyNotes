@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>change_swapfile</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<link rel="shortcut icon" href="http://img.hb.aicdn.com/6b858ec941683756697e9f45d68163e71d28524467df-e61VLG_fw658" />
+
+<link rel="stylesheet" href="http://yandex.st/highlightjs/6.1/styles/vs.css">
+<script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
+<script>
+hljs.tabReplace = ' ';
+hljs.initHighlightingOnLoad();
+</script>
+
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+ //是否显示导航栏
+ var showNavBar = true;
+ //是否展开导航栏
+ var expandNavBar = true;
+
+ $(document).ready(function(){
+    var h1s = $("body").find("h1");
+    var h2s = $("body").find("h2");
+    var h3s = $("body").find("h3");
+    var h4s = $("body").find("h4");
+    var h5s = $("body").find("h5");
+    var h6s = $("body").find("h6");
+
+    var headCounts = [h1s.length, h2s.length, h3s.length, h4s.length, h5s.length, h6s.length];
+    var vH1Tag = null;
+    var vH2Tag = null;
+    for(var i = 0; i < headCounts.length; i++){
+        if(headCounts[i] > 0){
+            if(vH1Tag == null){
+                vH1Tag = 'h' + (i + 1);
+            }else{
+                vH2Tag = 'h' + (i + 1);
+            }
+        }
+    }
+    if(vH1Tag == null){
+        return;
+    }
+
+    $("body").prepend('<div class="BlogAnchor">' + 
+        '<span style="color:red;position:absolute;top:-6px;left:0px;cursor:pointer;" onclick="$(\'.BlogAnchor\').hide();">×</span>' +
+        '<p>' + 
+            '<b id="AnchorContentToggle" title="收起" style="cursor:pointer;">目录▲</b>' + 
+        '</p>' + 
+        '<div class="AnchorContent" id="AnchorContent"> </div>' + 
+    '</div>' );
+
+    var vH1Index = 0;
+    var vH2Index = 0;
+    $("body").find("h1,h2,h3,h4,h5,h6").each(function(i,item){
+        var id = '';
+        var name = '';
+        var tag = $(item).get(0).tagName.toLowerCase();
+        var className = '';
+        if(tag == vH1Tag){
+            id = name = ++vH1Index;
+            name = id;
+            vH2Index = 0;
+            className = 'item_h1';
+        }else if(tag == vH2Tag){
+            id = vH1Index + '_' + ++vH2Index;
+            name = vH1Index + '.' + vH2Index;
+            className = 'item_h2';
+        }
+        $(item).attr("id","wow"+id);
+        $(item).addClass("wow_head");
+        $("#AnchorContent").css('max-height', ($(window).height() - 180) + 'px');
+        $("#AnchorContent").append('<li><a class="nav_item '+className+' anchor-link" onclick="return false;" href="#" link="#wow'+id+'">'+name+" · "+$(this).text()+'</a></li>');
+    });
+
+    $("#AnchorContentToggle").click(function(){
+        var text = $(this).html();
+        if(text=="目录▲"){
+            $(this).html("目录▼");
+            $(this).attr({"title":"展开"});
+        }else{
+            $(this).html("目录▲");
+            $(this).attr({"title":"收起"});
+        }
+        $("#AnchorContent").toggle();
+    });
+    $(".anchor-link").click(function(){
+        $("html,body").animate({scrollTop: $($(this).attr("link")).offset().top}, 500);
+    });
+
+    var headerNavs = $(".BlogAnchor li .nav_item");
+    var headerTops = [];
+    $(".wow_head").each(function(i, n){
+        headerTops.push($(n).offset().top);
+    });
+    $(window).scroll(function(){
+        var scrollTop = $(window).scrollTop();
+        $.each(headerTops, function(i, n){
+            var distance = n - scrollTop;
+            if(distance >= 0){
+                $(".BlogAnchor li .nav_item.current").removeClass('current');
+                $(headerNavs[i]).addClass('current');
+                return false;
+            }
+        });
+    });
+
+    if(!showNavBar){
+        $('.BlogAnchor').hide();
+    }
+    if(!expandNavBar){
+        $(this).html("目录▼");
+        $(this).attr({"title":"展开"});
+        $("#AnchorContent").hide();
+    }
+ });
+</script>
+<style>
+    /*导航*/
+    .BlogAnchor {
+        background: #f1f1f1;
+        padding: 10px;
+        line-height: 180%;
+        position: fixed;
+        right: 48px;
+        top: 48px;
+        border: 1px solid #aaaaaa;
+    }
+    .BlogAnchor p {
+        font-size: 18px;
+        color: #15a230;
+        margin: 0 0 0.3rem 0;
+        text-align: right;
+    }
+    .BlogAnchor .AnchorContent {
+        padding: 5px 0px;
+        overflow: auto;
+    }
+    .BlogAnchor li{
+        text-indent: 0.5rem;
+        font-size: 14px;
+        list-style: none;
+    }
+    .BlogAnchor li .nav_item{
+        padding: 3px;
+    }
+    .BlogAnchor li .item_h1{
+        margin-left: 0rem;
+    }
+    .BlogAnchor li .item_h2{
+        margin-left: 2rem;
+        font-size: 0.8rem;
+    }
+    .BlogAnchor li .nav_item.current{
+        color: white;
+        background-color: #5cc26f;
+    }
+    #AnchorContentToggle {
+        font-size: 13px;
+        font-weight: normal;
+        color: #FFF;
+        display: inline-block;
+        line-height: 20px;
+        background: #5cc26f;
+        font-style: normal;
+        padding: 1px 8px;
+    }
+    .BlogAnchor a:hover {
+        color: #5cc26f;
+    }
+    .BlogAnchor a {
+        text-decoration: none;
+    }
+    ul{
+    	 list-style-type: none;
+    }
+    
+</style>
+<script language="Javascript">
+	document.oncontextmenu = new Function("event.returnValue=false");
+	document.onselectstart = new Function("event.returnValue=false");
+</script>
+<script>
+	(function() {
+		if(!window.console) {
+			window.console = {
+				log: function() {}
+			};
+			return;
+		}
+		var me = 19;
+		var Star = function() {
+			this.x = 0;
+			this.speed = 1;
+			this.y = 0;
+		}
+		var score = 0;
+		var strs = function() {
+			var result = '';
+			for(var i = 0; i < 20; i++) {
+				result += "\n"
+				for(var n = 0; n < 40; n++) {
+					var now = '一'
+					if(i == 19 && n == me) {
+						now = "码"
+					}
+					if(i == 19 && n == me + 1) {
+						now = "农"
+					}
+					stars.forEach(function(star) {
+						var x = Math.floor(star.x);
+						var y = Math.floor(star.y)
+						if(x == n && y == i) {
+							if(Math.abs(star.y - 19) < 1 && (n == me || n == me + 1)) {
+								die()
+							}
+							now = "车"
+						}
+					})
+					result += now;
+
+				}
+
+			}
+			result += "       《全民躲车车》得分：" + score
+			return result;
+		}
+		window.onkeydown = function(e) {
+			if(e.keyCode == 37) {
+				me -= 1;
+				if(me < 0) me = 0;
+			} else if(e.keyCode == 39) {
+				me += 1
+				if(me > 38) me = 38
+			}
+		}
+		var count = 0;
+		var die = function() {
+			clearInterval(timer1)
+			clearInterval(timer2)
+			clearInterval(timer3)
+			setTimeout(function() {
+				console.log("游戏结束，您的得分：" + score + "，｡:.ﾟヽ(｡◕‿◕｡)ﾉﾟ.:｡")
+			}, 100)
+
+		}
+		var stars = []
+		var appearP = 1
+		var timer1, timer2, timer3;
+		var begin = function() {
+			timer1 = setInterval(function() {
+				var createCount = Math.floor(Math.random() * 5 * appearP)
+				for(var i = 0; i < createCount; i++) {
+					var star = new Star();
+					star.x = Math.floor(Math.random() * 40)
+					star.y = 0;
+					star.speed = Math.random() * appearP; //Math.floor(Math.random()*3+1)
+					stars.push(star)
+				}
+
+			}, 1000)
+			timer2 = setInterval(function() {
+				stars.forEach(function(star, i) {
+					star.y += star.speed;
+					if(star.y >= 31) {
+						stars.splice(i, 1);
+						score++
+					}
+				})
+				console.log(strs())
+				count++;
+				if(count > 300) {
+					console.clear()
+					count = 0;
+				}
+			}, 100)
+			timer3 = setInterval(function() {
+				appearP *= 1.1
+			}, 3000)
+		}
+		console.log("这是本文档的彩蛋，祝您游戏愉快( ｡ớ ₃ờ)ھ")
+		console.log("输入 start(); 后即可开始《码农躲车车》游戏！")
+		window.start = function() {
+			appearP = 1.1
+			starts = [];
+			score = 0;
+			me = 19;
+			count = 0;
+			console.log("%c请先用鼠标点击一下弹个车网页页面，游戏需要捕捉网页上的键盘事件（你应该懂吧）！", "font-size:16px;color:#ff6700;")
+			console.log("使用键盘左右键移动最下方的码农，躲开所有的汽车，汽车数量和速度会一直增加，看看谁坚持的最久吧！")
+
+			var countdown = 6;
+			setTimeout(function() {
+				if(countdown-- <= 1) {
+					begin();
+				} else {
+					console.log(countdown)
+					setTimeout(arguments.callee, 1000)
+				}
+			}, 1000)
+			return("倒计时！")
+		}
+	})();
+</script>
+
+<style type="text/css">
+	html {
+		//background-color: #FFFACD;
+	}
+	body {
+		background-color: #C7EDCC;
+	}
+</style>
+
+</head>
+<body>
+<p><b style="font-size: 42px;font-family: 'Consolas';">Ubuntu 修改 swapfile</b></p>
+<hr />
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;今天(2018-7-16)，我将一条内存加入了一台 Ubuntu 主机，所以顺便调整一下 swap 的大小，并将操作方法记录下来，以便今后查阅。顺便一提，最好有全速 NVMe 固态硬盘。  </p>
+<h2>查看交换分区大小</h2>
+<ul>
+<li>
+<p>执行</p>
+<pre><code>free -m
+</code></pre>
+
+</li>
+<li>
+<p>返回</p>
+<pre><code>              total        used        free      shared  buff/cache   available
+Mem:           7850        1442        4907          24         1500        6112
+Swap:          2047           0        2047
+</code></pre>
+
+<ul>
+<li>可以看出 swap 只有安装系统时分配的 2GB。</li>
+</ul>
+</li>
+</ul>
+<h2>创建一个 swap 文件</h2>
+<ul>
+<li>
+<p>先切换到 / 目录</p>
+<pre><code>cd /
+</code></pre>
+
+</li>
+<li>
+<p>然后依次执行</p>
+<pre><code>sudo mkdir swap
+cd swap
+sudo dd if=/dev/zero of=swapfile bs=1024 count=8000000
+</code></pre>
+
+</li>
+<li>在 /swap 创建了一个叫 swapfile 的交换文件，大小是8GB，也可以根据需求自行更改大小。</li>
+<li>这里也可以直接在 / 目录下创建 swapfile，如果这样做，下面操作的路径需要自行更改。</li>
+<li>
+<p>等一会儿，执行完毕后显示</p>
+<pre><code>8000000+0 records in
+8000000+0 records out
+8192000000 bytes (8.2 GB, 7.6 GiB) copied, 26.5573 s, 308 MB/s
+</code></pre>
+
+</li>
+</ul>
+<h2>创建 swap 文件系统</h2>
+<ul>
+<li>
+<p>执行</p>
+<pre><code>sudo mkswap swapfile
+</code></pre>
+
+</li>
+<li>也就是把之前创建的文件转换成 swap 文件。</li>
+<li>
+<p>这里 <code>mkswap</code> 可以带参数，不过一般也不需要。</p>
+<pre><code>-c：建立交换区前，先检查是否有损坏的区块；
+-f：在SPARC电脑上建立交换区时，要加上此参数；
+-v0：建立旧式交换区，此为预设值；
+-v1：建立新式交换区。
+</code></pre>
+
+</li>
+<li>
+<p>返回结果</p>
+<pre><code>mkswap: swapfile: insecure permissions 0644, 0600 suggested.
+Setting up swapspace version 1, size = 7.6 GiB (8191995904 bytes)
+no label, UUID=39570deb-1f1e-4568-b6dd-17bb55b30d32
+</code></pre>
+
+</li>
+</ul>
+<h2>激活 swap</h2>
+<ul>
+<li>
+<p>执行</p>
+<pre><code>sudo swapon swapfile
+</code></pre>
+
+</li>
+<li>
+<p>返回</p>
+<pre><code>swapon: /swap/swapfile: insecure permissions 0644, 0600 suggested.
+</code></pre>
+
+</li>
+<li>到这一步，swap 就已经被改过来了。</li>
+<li>可以再次查看大小。</li>
+<li>
+<p>执行</p>
+<pre><code>free -m
+</code></pre>
+
+</li>
+<li>
+<p>返回</p>
+<pre><code>              total        used        free      shared  buff/cache   available
+Mem:           7850        1830         131          21        5888        5695
+Swap:          9860           0        9860
+</code></pre>
+
+</li>
+<li>从返回的数据上来看好像有点不对劲，总量大于8GB，那是因为系统预设的那一部分还没去掉。</li>
+</ul>
+<h2>关闭和删除原来的swapfile</h2>
+<ul>
+<li>
+<p>先切换到 / 目录</p>
+<pre><code>cd /
+</code></pre>
+
+</li>
+<li>
+<p>关闭原来的 swapfile</p>
+<pre><code>sudo swapoff swapfile
+</code></pre>
+
+</li>
+<li>
+<p>删除原来的 swapfile</p>
+<pre><code>sudo rm /swapfile
+</code></pre>
+
+</li>
+<li>
+<p>再次查看，发现已经改过来了</p>
+<pre><code>              total        used        free      shared  buff/cache   available
+Mem:           7850        1841         246          21        5762        5684
+Swap:          7812           0        7812
+</code></pre>
+
+</li>
+</ul>
+<h2>设置开机启动</h2>
+<ul>
+<li>
+<p>打开 fstab 文件</p>
+<pre><code>sudo vim /etc/fstab
+</code></pre>
+
+</li>
+<li>
+<p>修改</p>
+<pre><code>“/swapfile”改为“/swap/swapfile”，也就是 swapfile 文件的路径。
+</code></pre>
+
+</li>
+</ul>
+<h2>卸载</h2>
+<ul>
+<li>如果暂时不想要用 swapfile，你可以卸载它。</li>
+<li>
+<p>执行</p>
+<pre><code>sudo swapoff swap/
+</code></pre>
+
+<p>swapfile</p>
+</li>
+<li>如果要永久生效，还是要写入文件的。当然，也可以选择删除它，这里不再赘述。</li>
+</ul>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
