@@ -2294,6 +2294,8 @@ node_modules
 <p>配置 Git</p>
 <pre><code>  1 git config --global user.name 'your name'
   2 git config --global user.email 'your email address'
+  3 // 检查
+  4 git config --list
 </code></pre>
 
 </li>
@@ -2319,17 +2321,19 @@ node_modules
 上传公钥  
 
 <ul>
-<li>访问 <code>https://github.com/settings/keys</code></li>
-<li>点击 <code>New SSH key</code></li>
+<li>访问 <a href="https://github.com/settings/keys" title="SSH and GPG keys">SSH and GPG keys</a></li>
+<li>单击 <code>New SSH key</code></li>
 <li><code>Title</code> 任意,<code>Key</code> 为刚才复制的内容</li>
-<li>点击 <code>Add SSH key</code></li>
+<li>单击 <code>Add SSH key</code></li>
 </ul>
 </li>
 </ol>
 </li>
 <li>
-测试连接
-	  1 ssh -T git@github.com
+<p>测试连接</p>
+<pre><code>  1 ssh -T git@github.com
+</code></pre>
+
 </li>
 </ol>
 <h3>克隆</h3>
@@ -2364,6 +2368,8 @@ node_modules
 <li>
 <p>添加文件</p>
 <pre><code>  1 git add [your file]
+  2 // 全部上传
+  3 git add .
 </code></pre>
 
 </li>
@@ -2371,6 +2377,8 @@ node_modules
 <p>提交到本地库</p>
 <pre><code>  1 git commit
   2 [add your summary]
+  3 // 或者
+  4 git commit -m &quot;add your summary&quot;
 </code></pre>
 
 </li>

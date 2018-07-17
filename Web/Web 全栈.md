@@ -1033,6 +1033,8 @@
 
 		  1 git config --global user.name 'your name'
 		  2 git config --global user.email 'your email address'
+		  3 // 检查
+		  4 git config --list
 3. 生成公钥
 
 		  1 ssh-keygen -C 'your email address' -t rsa
@@ -1044,11 +1046,12 @@
 			  2 gedit id_rsa.pub
 			  3 复制全部内容
 	2. 上传公钥  
-		+ 访问 `https://github.com/settings/keys`
-		+ 点击 `New SSH key`
+		+ 访问 [SSH and GPG keys](https://github.com/settings/keys "SSH and GPG keys")
+		+ 单击 `New SSH key`
 		+ `Title` 任意,`Key` 为刚才复制的内容
-		+ 点击 `Add SSH key`
+		+ 单击 `Add SSH key`
 5. 测试连接
+
 		  1 ssh -T git@github.com
 ### 克隆 ###
 + 克隆
@@ -1067,10 +1070,14 @@
 + 添加文件
 
 		  1 git add [your file]
+		  2 // 全部上传
+		  3 git add .
 + 提交到本地库
 
 		  1 git commit
 		  2 [add your summary]
+		  3 // 或者
+		  4 git commit -m "add your summary"
 + 提交到 GitHub
 
 		  1 git push
