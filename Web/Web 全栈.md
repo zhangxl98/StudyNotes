@@ -1379,6 +1379,10 @@
 		 12 
 		 13 // 3. 调用 render 函数渲染
 		 14 ReactDOM.render(mydiv, document.getElementById('app'))
+### 安装依赖项整合 ###
+	  1 npm init -y
+	  2 cnpm i webpack webpack-cli webpack-dev-server html-webpack-plugin react babel-core babel-loader babel-plugin-transform-runtime babel-preset-env babel-preset-stage-0 babel-preset-react -D
+	  3 cnpm i react react-dom -S
 ## AngularJS ##
 ### AngularJs 官网 ###
 [AngularJs 官网](https://angularjs.org/ "AngularJs 官网")  
