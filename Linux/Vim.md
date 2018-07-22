@@ -101,6 +101,93 @@
 		<th>说明</th>
 	</tr>
 	<tr>
+		<td>w</td>
+		<td>到下一个单词的开头</td>
+	</tr>
+	<tr>
+		<td>e</td>
+		<td>到下一个单词的结尾</td>
+	</tr>
+	<tr>
+		<td>%</td>
+		<td>匹配当前光标上的括号的另一半，包含 (,{,[</td>
+	</tr>
+	<tr>
+		<td>#</td>
+		<td>匹配当前光标上的上一个单词</td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td>匹配当前光标上的下一个单词</td>
+	</tr>
+</table>
+### 拷贝 ###
+<table style="border: 1;">
+	<caption><b style="font-size: 16px;font-family: '微软雅黑';">拷贝</b></caption>
+	<tr>
+		<th>命令</th>
+		<th>说明</th>
+	</tr>
+	<tr>
+		<td>y</td>
+		<td>复制到"寄存器</td>
+	</tr>
+	<tr>
+		<td>"+y</td>
+		<td>复制到系统剪贴板(也就是vim的+寄存器)</td>
+	</tr>
+	<tr>
+		<td>yy</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+### 粘贴 ###
+<table style="border: 1;">
+	<caption><b style="font-size: 16px;font-family: '微软雅黑';">粘贴</b></caption>
+	<tr>
+		<th>命令</th>
+		<th>说明</th>
+	</tr>
+	<tr>
+		<td>p</td>
+		<td>在当前位置之后</td>
+	</tr>
+	<tr>
+		<td>P</td>
+		<td>在当前位置之前</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+### 删除 ###
+<table style="border: 1;">
+	<caption><b style="font-size: 16px;font-family: '微软雅黑';">删除</b></caption>
+	<tr>
+		<th>命令</th>
+		<th>说明</th>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
 		<td></td>
 		<td></td>
 	</tr>
