@@ -932,7 +932,9 @@ img {
 </li>
 <li>
 <p>静态 IP 配置文件</p>
-<pre><code>iface eth0 inet static
+<pre><code>/etc/network/interfaces
+
+iface eth0 inet static
 address [inet]
 netmask [netmask]
 gateway [gateway]
@@ -946,9 +948,28 @@ gateway [gateway]
 
 </li>
 </ol>
-<h3>软件安装与系统升级常用命令</h3>
-<h3>其他常用命令</h3>
 <h3>BackTrack环境汉化</h3>
+<ol>
+<li>
+<p>安装中文支持模块</p>
+<pre><code>apt-get install language-support-zh language-pack-zh
+</code></pre>
+
+</li>
+<li>
+<p>安装语言选择器</p>
+<pre><code>apt-get install language-selector
+</code></pre>
+
+</li>
+<li>
+<p>重启系统</p>
+<pre><code>reboot
+</code></pre>
+
+</li>
+</ol>
+<h3>信息收集</h3>
 
 </body>
 </html>
